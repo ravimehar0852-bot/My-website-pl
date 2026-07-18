@@ -130,36 +130,35 @@ body{
     padding:10px 16px;
 }
 
-.logo{.nav-right{
+.nav-right{
     display:flex;
     align-items:center;
     gap:15px;
 }
 
 .menu-btn{
-    background: transparent;
-    border: none;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-    cursor: pointer;
-    padding: 0;
+    background:transparent;
+    border:none;
+    width:45px;
+    height:45px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+    cursor:pointer;
+    padding:0;
 }
 
 .menu-btn span{
-    display: block;
-    width: 32px;
-    height: 4px;
-    background: #000;
-    border-radius: 50px;
+    width:34px;
+    height:4px;
+    background:#000;
+    border-radius:50px;
 }
 
 .menu-btn:hover{
-    background:#333;
+    background:transparent;
 }
     font-size:24px;
 }
