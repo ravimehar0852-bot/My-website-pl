@@ -137,24 +137,25 @@ body{
 }
 
 .menu-btn{
-    width:45px;
-    height:45px;
-    background:#111;
-    border:none;
-    border-radius:8px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    gap:5px;
-    cursor:pointer;
+    background: transparent;
+    border: none;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 0;
 }
 
 .menu-btn span{
-    width:22px;
-    height:3px;
-    background:#fff;
-    border-radius:5px;
+    display: block;
+    width: 32px;
+    height: 4px;
+    background: #000;
+    border-radius: 50px;
 }
 
 .menu-btn:hover{
