@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KTS Cabs — Outstation, Local &amp; Airport Taxi Service in Lucknow</title>
+<meta name="description" content="KTS Cabs offers safe, reliable and affordable outstation, local and airport taxi service in Lucknow. Book Innova, Ertiga, Dzire and more. Fare starts @Rs.9/km.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">
+        <svg viewBox="0 0 60 34" fill="none">
+          <path d="M4 26 L10 12 Q13 6 20 6 H40 Q47 6 50 12 L56 26 Z" fill="#FFC22C"/>
+          <rect x="0" y="24" width="60" height="6" rx="3" fill="#100F0C"/>
+          <circle cx="16" cy="30" r="4" fill="#100F0C"/>
+          <circle cx="44" cy="30" r="4" fill="#100F0C"/>
+        </svg>
+      </div>
+      <div class="brand-text"><span>KTS</span> <b>CABS</b></div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About Us</a>
+      <a href="index.html#fleet">Driver</a>
+      <a href="index.html#contact">Contact Us</a>
+    </div>
+    <div class="nav-cta">
+      <a href="tel:+918737993690" class="phone-pill">+91-8737993690</a>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<div class="drawer-overlay"></div>
+<div class="drawer">
+  <button class="drawer-close" aria-label="Close menu">✕</button>
+  <div class="brand" style="margin-bottom:30px;">
+    <div class="brand-mark">
+      <svg viewBox="0 0 60 34" fill="none"><path d="M4 26 L10 12 Q13 6 20 6 H40 Q47 6 50 12 L56 26 Z" fill="#FFC22C"/><rect x="0" y="24" width="60" height="6" rx="3" fill="#100F0C"/><circle cx="16" cy="30" r="4" fill="#100F0C"/><circle cx="44" cy="30" r="4" fill="#100F0C"/></svg>
+    </div>
+    <div class="brand-text"><span>KTS</span> <b>CABS</b></div>
+  </div>
+  <a href="index.html">Home</a>
+  <a href="index.html#about">About Us</a>
+  <a href="index.html#fleet">Driver</a>
+  <a href="index.html#contact">Contact Us</a>
+  <a href="tel:+918737993690" class="btn btn-yellow btn-block mt-24">+91-8737993690</a>
+</div>
+
+<!-- ============ HERO + SEARCH WIDGET ============ -->
+<header style="padding:40px 0 20px; position:relative; overflow:hidden;">
+  <div style="position:absolute; inset:0; background:
+      radial-gradient(circle at 90% 0%, #FFEDBB 0%, transparent 45%),
+      radial-gradient(circle at 0% 100%, #FFF3D0 0%, transparent 40%);"></div>
+  <div class="container" style="position:relative; display:grid; grid-template-columns:1fr 1.05fr; gap:48px; align-items:start;">
+    <div>
+      <p class="eyebrow">Lucknow's trusted taxi network</p>
+      <h1 style="font-size:clamp(32px,4.4vw,48px); margin-top:12px;">Safe rides,<br>every route,<br>every time.</h1>
+      <p style="font-size:16px; color:var(--ink-soft); margin-top:18px; max-width:420px; line-height:1.7;">
+        Outstation, local and airport taxi service across Lucknow and beyond — well-maintained cars, verified drivers, and fares that start at just ₹9/km.
+      </p>
+      <div class="flex gap-16 mt-32" style="flex-wrap:wrap;">
+        <a href="#" class="btn btn-wa" data-wa="Hi KTS Cabs, I'd like to know my taxi fare.">💬 Get Taxi Fare</a>
+        <a href="tel:+918737993690" class="btn btn-outline">📞 Call Now</a>
+      </div>
+      <div class="flex gap-32 mt-32" style="flex-wrap:wrap;">
+        <div><div style="font-family:'Baloo 2'; font-size:24px; font-weight:800;">9+ Yrs</div><div style="font-size:12px; color:var(--ink-soft);">On the road</div></div>
+        <div><div style="font-family:'Baloo 2'; font-size:24px; font-weight:800;">50,000+</div><div style="font-size:12px; color:var(--ink-soft);">Trips completed</div></div>
+        <div><div style="font-family:'Baloo 2'; font-size:24px; font-weight:800;">4.8★</div><div style="font-size:12px; color:var(--ink-soft);">Rider rating</div></div>
+      </div>
+    </div>
+
+    <div class="search-widget reveal">
+      <div class="sw-tabs">
+        <div class="sw-tab active" data-panel="panel-outstation">🏢 Outstation</div>
+        <div class="sw-tab" data-panel="panel-local">🚗 Local</div>
+      </div>
+      <div class="sw-body">
+
+        <div class="sw-panel" id="panel-outstation">
+          <div class="sw-pill-row">
+            <div class="sw-pill active">One Way</div>
+            <div class="sw-pill">Round Trip</div>
+          </div>
+          <div class="sw-field"><span class="ic">📍</span><input type="text" placeholder="From City"></div>
+          <div class="sw-field"><span class="ic">📍</span><input type="text" placeholder="To City"></div>
+          <div class="sw-field"><span class="ic">📅</span><input type="text" class="js-today" readonly></div>
+          <div class="sw-field"><span class="ic">🕐</span><input type="text" class="js-now" readonly></div>
+          <div class="sw-field"><span class="ic">📱</span><input type="tel" placeholder="Mobile No"></div>
+          <button class="btn btn-yellow btn-block js-search-cab">Search Cab</button>
+        </div>
+
+        <div class="sw-panel" id="panel-local" style="display:none;">
+          <div class="sw-pill-row">
+            <div class="sw-pill active">Hourly Basis</div>
+            <div class="sw-pill">Airport Transfer</div>
+          </div>
+          <div class="sw-field"><span class="ic">📍</span>
+            <select><option>-- Select Local Package --</option><option>4 Hrs / 40 Km</option><option>8 Hrs / 80 Km</option><option>12 Hrs / 120 Km</option></select>
+          </div>
+          <div class="sw-field"><span class="ic">📍</span>
+            <select><option>Select Hours/Kms</option><option>4 Hrs</option><option>8 Hrs</option><option>12 Hrs</option></select>
+          </div>
+          <div class="sw-field"><span class="ic">📅</span><input type="text" class="js-today" readonly></div>
+          <div class="sw-field"><span class="ic">🕐</span><input type="text" class="js-now" readonly></div>
+          <div class="sw-field"><span class="ic">📱</span><input type="tel" placeholder="Mobile No"></div>
+          <button class="btn btn-yellow btn-block js-search-cab">Search Cab</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ WELCOME ============ -->
+<section id="about">
+  <div class="container" style="max-width:820px;">
+    <p class="eyebrow center">About KTS Cabs</p>
+    <h2 class="center mt-8">Welcome to KTS Cabs</h2>
+    <p class="center mt-16" style="color:var(--ink-soft); font-size:15.5px; line-height:1.8;">
+      We are a top travel agency offering safe, reliable and affordable cab service for all your trips. KTS Cabs is a leading outstation cab service provider that offers reliable and cost-effective solutions for all your local travel needs. With a fleet of well-maintained cars, experienced drivers and 24/7 customer support, we are the go-to choice for travellers who want to explore India's diverse landscape in a safe and comfortable manner.
+    </p>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section style="background:var(--cream-dim);">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">What we offer</p>
+      <h2>Our Taxi Services</h2>
+    </div>
+    <div class="reveal" style="display:grid; grid-template-columns:repeat(2,1fr); gap:26px;">
+      <div class="card route-card">
+        <div class="route-media" style="background:linear-gradient(120deg, var(--yellow) 42%, #2A2822 43%);">
+          <div class="rlogo">🚕 KTS CABS</div>
+          <div class="rtitle">One Way<br>Taxi Service</div>
+        </div>
+        <div class="route-body">
+          <p>One Way Taxi Service hire with KTS Cabs — pay only for the distance you travel.</p>
+          <div class="route-meta">
+            <span class="route-price">₹20.00<span>per KM</span></span>
+            <a href="#" class="btn btn-yellow btn-sm" data-wa="Hi KTS Cabs, I want to book a One Way Taxi.">Call Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="card route-card">
+        <div class="route-media" style="background:linear-gradient(120deg, var(--yellow) 42%, #2A2822 43%);">
+          <div class="rlogo">🚕 KTS CABS</div>
+          <div class="rtitle">Round Trip<br>Taxi Service</div>
+        </div>
+        <div class="route-body">
+          <p>Round Trip Taxi Service hire with KTS Cabs — comfortable travel, there and back.</p>
+          <div class="route-meta">
+            <span class="route-price">₹15.00<span>per KM</span></span>
+            <a href="#" class="btn btn-yellow btn-sm" data-wa="Hi KTS Cabs, I want to book a Round Trip Taxi.">Call Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="card route-card">
+        <div class="route-media" style="background:linear-gradient(120deg, var(--yellow) 42%, #2A2822 43%);">
+          <div class="rlogo">🚕 KTS CABS</div>
+          <div class="rtitle">Local Taxi<br>Service</div>
+        </div>
+        <div class="route-body">
+          <p>Local Taxi Service hire with KTS Cabs — hourly packages for city errands and visits.</p>
+          <div class="route-meta">
+            <span class="route-price">₹15.00<span>per KM</span></span>
+            <a href="#" class="btn btn-yellow btn-sm" data-wa="Hi KTS Cabs, I want to book a Local Taxi.">Call Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="card route-card">
+        <div class="route-media" style="background:linear-gradient(120deg, var(--yellow) 42%, #2A2822 43%);">
+          <div class="rlogo">🚕 KTS CABS</div>
+          <div class="rtitle">Airport Taxi<br>Service</div>
+        </div>
+        <div class="route-body">
+          <p>Airport Taxi Service hire with KTS Cabs — on-time pickups and drop-offs, guaranteed.</p>
+          <div class="route-meta">
+            <span class="route-price">₹20.00<span>per KM</span></span>
+            <a href="#" class="btn btn-yellow btn-sm" data-wa="Hi KTS Cabs, I want to book an Airport Taxi.">Call Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLEET ============ -->
+<section id="fleet">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Pick your ride</p>
+      <h2>Our Taxi For Hire</h2>
+    </div>
+    <div class="fleet-scroll reveal">
+      <div class="card fleet-card">
+        <span class="fleet-badge">Dzire or similar</span>
+        <div style="height:130px; background:linear-gradient(135deg,#f4f4f4,#e2e2e2); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:40px;">🚗</div>
+        <div class="fleet-name">Dzire or similar (4+1)</div>
+        <div class="fleet-price">₹12.00 / KM</div>
+        <a href="#" class="btn btn-yellow btn-sm btn-block mt-16" data-wa="Hi KTS Cabs, I'd like to book a Dzire.">Book Now</a>
+      </div>
+      <div class="card fleet-card">
+        <span class="fleet-badge">Innova Crysta</span>
+        <div style="height:130px; background:linear-gradient(135deg,#f4f4f4,#e2e2e2); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:40px;">🚙</div>
+        <div class="fleet-name">Innova Crysta (6+1)</div>
+        <div class="fleet-price">₹18.00 / KM</div>
+        <a href="#" class="btn btn-yellow btn-sm btn-block mt-16" data-wa="Hi KTS Cabs, I'd like to book an Innova Crysta.">Book Now</a>
+      </div>
+      <div class="card fleet-card">
+        <span class="fleet-badge">Maruti Suzuki Ertiga</span>
+        <div style="height:130px; background:linear-gradient(135deg,#f4f4f4,#e2e2e2); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:40px;">🚐</div>
+        <div class="fleet-name">Maruti Suzuki Ertiga (6+1)</div>
+        <div class="fleet-price">₹14.00 / KM</div>
+        <a href="#" class="btn btn-yellow btn-sm btn-block mt-16" data-wa="Hi KTS Cabs, I'd like to book an Ertiga.">Book Now</a>
+      </div>
+      <div class="card fleet-card">
+        <span class="fleet-badge">Kia Carens</span>
+        <div style="height:130px; background:linear-gradient(135deg,#f4f4f4,#e2e2e2); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:40px;">🚙</div>
+        <div class="fleet-name">Kia Carens (6+1)</div>
+        <div class="fleet-price">₹17.00 / KM</div>
+        <a href="#" class="btn btn-yellow btn-sm btn-block mt-16" data-wa="Hi KTS Cabs, I'd like to book a Kia Carens.">Book Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ONE WAY ROUTES ============ -->
+<section style="background:var(--cream-dim);">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Best-loved outstation trips</p>
+      <h2>One Way Route</h2>
+    </div>
+    <div class="reveal" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+      <div class="card route-card">
+        <div class="route-media" style="background:linear-gradient(135deg,#FFC22C,#8a5a13);">
+          <div class="rlogo">🚕 KTS CABS</div>
+          <div class="rtitle">Lucknow To<br>Varanasi Cabs</div>
+        </div>
+        <div class="route-body">
+          <p>Lucknow To Varanasi Taxi Service, fare starts @Rs. 9/km with KTS Cabs.</p>
+          <div class="route-meta"><span class="route-tag">Ertiga</span><span class="route-price">₹15.00<span>per KM</span></span></div>
+        </div>
+      </div>
+      <div class="card route-card">
+        <div class="route-media" style="background:linear-gradient(135deg,#FFC22C,#5a2b6b);">
+          <div class="rlogo">🚕 KTS CABS</div>
+          <div class="rtitle">Lucknow To<br>Ayodhya Cabs</div>
+        </div>
+        <div class="route-body">
+          <p>Lucknow To Ayodhya Taxi, cab booking @Rs. 9/km With KTS Cabs.</p>
+          <div class="route-meta"><span class="route-tag">Toyota Etios</span><span class="route-price">₹12.00<span>per KM</span></span></div>
+        </div>
+      </div>
+      <div class="card route-card">
+        <div class="route-media" style="background:linear-gradient(135deg,#FFC22C,#7a4a1a);">
+          <div class="rlogo">🚕 KTS CABS</div>
+          <div class="rtitle">Lucknow To<br>Allahabad Cabs</div>
+        </div>
+        <div class="route-body">
+          <p>Lucknow To Prayagraj Cabs, fare start @ Rs.9/km with KTS Cabs.</p>
+          <div class="route-meta"><span class="route-tag">Ertiga</span><span class="route-price">₹15.00<span>per KM</span></span></div>
+        </div>
+      </div>
+      <div class="card route-card">
+        <div class="route-media" style="background:linear-gradient(135deg,#FFC22C,#8a1a2a);">
+          <div class="rlogo">🚕 KTS CABS</div>
+          <div class="rtitle">Lucknow to<br>Agra Cabs</div>
+        </div>
+        <div class="route-body">
+          <p>Lucknow To Agra Taxi Service, fare starts @Rs. 9/km with KTS Cabs.</p>
+          <div class="route-meta"><span class="route-tag">SUV Innova</span><span class="route-price">₹20.00<span>per KM</span></span></div>
+        </div>
+      </div>
+      <div class="card route-card">
+        <div class="route-media" style="background:linear-gradient(135deg,#FFC22C,#1a5a4a);">
+          <div class="rlogo">🚕 KTS CABS</div>
+          <div class="rtitle">Lucknow To<br>Nainital Cabs</div>
+        </div>
+        <div class="route-body">
+          <p>Lucknow To Nainital Taxi, cab booking with KTS Cabs.</p>
+          <div class="route-meta"><span class="route-tag">Innova</span><span class="route-price">₹18.00<span>per KM</span></span></div>
+        </div>
+      </div>
+      <div class="card route-card">
+        <div class="route-media" style="background:linear-gradient(135deg,#FFC22C,#2a2a5a);">
+          <div class="rlogo">🚕 KTS CABS</div>
+          <div class="rtitle">Lucknow To<br>Noida Cabs</div>
+        </div>
+        <div class="route-body">
+          <p>Lucknow To Noida Cab Service, fare starts @Rs. 9/km With KTS Cabs.</p>
+          <div class="route-meta"><span class="route-tag">Sedan CNG</span><span class="route-price">₹12.00<span>per KM</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Riders speak</p>
+      <h2>Why People Love KTS Cabs</h2>
+    </div>
+    <div class="testi-scroll reveal">
+      <div class="card testi-card">
+        <div class="testi-quote">"</div>
+        <p>I rely on KTS Cabs for all my travels in Kanpur, and they have never let me down. From the easy booking process to the courteous drivers and well-maintained cars, they consistently provide a reliable and comfortable service. KTS Cabs is my go-to choice for hassle-free transportation.</p>
+        <div class="testi-name">Karan Sahni, Kanpur</div>
+      </div>
+      <div class="card testi-card">
+        <div class="testi-quote">"</div>
+        <p>Exceptional service, always on time. I appreciate the straightforward taxi service and would happily recommend KTS Cabs to friends and family for any trip in and around Lucknow.</p>
+        <div class="testi-name">Ashish Rawat, Lucknow</div>
+      </div>
+      <div class="card testi-card">
+        <div class="testi-quote">"</div>
+        <p>Booked an outstation trip to Varanasi with my family — clean car, punctual driver, and fair pricing with no last-minute surprises. Will book again for our next trip.</p>
+        <div class="testi-name">Priya Mehrotra, Lucknow</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section style="background:var(--cream-dim);">
+  <div class="container" style="max-width:760px;">
+    <p class="eyebrow center">Frequently Asked Questions</p>
+    <h2 class="center mt-8">Let's Start a Free of Questions and<br>Get a Quick Support</h2>
+
+    <div class="mt-32 reveal">
+      <div class="faq-item">
+        <div class="faq-q">1. Is KTS Cabs available for city tours or special events in Lucknow?<span class="plus">+</span></div>
+        <div class="faq-a"><p>Yes, KTS Cabs is available for city tours and special events in Lucknow. Whether you want to explore the city's attractions or need transportation for a special occasion, we are here to make your experience memorable.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">2. Is it possible to make a reservation for a KTS Cab in advance?<span class="plus">+</span></div>
+        <div class="faq-a"><p>Absolutely. You can reserve a KTS Cab in advance through our website, phone, or WhatsApp — just share your pickup date, time, and route and we'll confirm your cab.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">3. Can I book a KTS Cab for airport transfers?<span class="plus">+</span></div>
+        <div class="faq-a"><p>Yes, we offer dedicated airport pickup and drop-off service with real-time flight tracking so your driver is always on time.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">4. Are the drivers at KTS Cabs experienced and licensed?<span class="plus">+</span></div>
+        <div class="faq-a"><p>All our drivers are background-verified, licensed, and experienced in both city and outstation driving conditions.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">5. What types of vehicles does KTS Cabs offer?<span class="plus">+</span></div>
+        <div class="faq-a"><p>Our fleet includes Dzire, Etios, Ertiga, Innova Crysta and Kia Carens, so you can choose based on group size and comfort.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">6. How can I book a taxi with KTS Cabs in Lucknow?<span class="plus">+</span></div>
+        <div class="faq-a"><p>Use the search widget on our homepage, call us directly, or message us on WhatsApp — booking takes less than two minutes.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POPULAR ROUTES STRIP ============ -->
+<section class="routes-strip">
+  <div class="container">
+    <p class="eyebrow center" style="color:var(--yellow);">Explore India with us</p>
+    <h2>Popular Routes</h2>
+    <div class="routes-cols">
+      <div>
+        <a href="#">Taxi Service in Lucknow ..</a>
+        <a href="#">Tempo Traveller On Rent In Lucknow ..</a>
+        <a href="#">One Way Taxi Service In Lucknow ..</a>
+        <a href="#">Airport Taxi Service In Lucknow ..</a>
+        <a href="#">Innova Cab Hire In Lucknow ..</a>
+        <a href="#">Lucknow To Varanasi Taxi Service ..</a>
+        <a href="#">Prayagraj To Hardoi Taxi Service ..</a>
+        <a href="#">Prayagraj To Kushinagar Taxi Service ..</a>
+        <a href="#">Prayagraj To Bijnor Taxi Service ..</a>
+      </div>
+      <div>
+        <a href="#">Lucknow To Mau Taxi Service ..</a>
+        <a href="#">Varanasi to Bareilly Taxi Service ..</a>
+        <a href="#">Varanasi to Lakhimpur Kheri Taxi Serv ..</a>
+        <a href="#">Varanasi to Budaun Taxi Service ..</a>
+        <a href="#">Varanasi to Shahjahanpur Taxi Service ..</a>
+        <a href="#">Noida to Jodhpur Taxi Service ..</a>
+        <a href="#">Noida to Jaisalmer Taxi Service ..</a>
+        <a href="#">Noida to Bikaner Taxi Service ..</a>
+        <a href="#">Noida to Kota Taxi Service ..</a>
+      </div>
+    </div>
+    <p class="center mt-32"><a href="#" style="color:var(--yellow); font-weight:700;">+ Explore more routes</a></p>
+  </div>
+</section>
+
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-contact">
+          <a href="tel:+918737993690">📞 +91-8737993690</a>
+          <a href="mailto:booking@ktscabs.com">✉️ booking@ktscabs.com</a>
+        </div>
+        <p style="margin-top:16px; font-size:14px; color:#B9AF9A; max-width:420px;">
+          🏠 Ekta Nagar, 544/515, Campbell Rd, near gas Godam Wali Gali, Azad Nagar, Balajanj, Lucknow, Uttar Pradesh 226003
+        </p>
+        <div class="social-row">
+          <a href="#">f</a><a href="#">𝕏</a><a href="#">in</a><a href="#">◎</a><a href="#">▶</a>
+        </div>
+      </div>
+      <div>
+        <a href="#" class="btn btn-yellow" data-wa="Hi KTS Cabs, I'd like to book a taxi.">💬 Get Taxi Fare</a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+      <a href="#">Refund &amp; Cancellation Policy</a>
+      <a href="#">FAQs</a>
+      <a href="#">Blog</a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 KTS Cabs Private Limited Hire Services. All rights Reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="bottom-bar">
+  <a href="tel:+918737993690" class="btn btn-yellow">📞 8737993690</a>
+  <a href="#" class="btn btn-wa" data-wa="Hi KTS Cabs, I'd like to know my taxi fare.">💬 Get Taxi Fare</a>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
