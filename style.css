@@ -147,3 +147,7 @@ body { background: #000; }
     font-weight: 700;
     cursor: pointer;
 }
+.read-more-btn{
+    text-decoration: none;
+    text-align: center;
+}
