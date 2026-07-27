@@ -110,3 +110,34 @@ body { background: #000; }
   color: #000;
   cursor: pointer;
 }
+.welcome{
+    padding:30px 20px;
+    background:#fff;
+}
+
+.welcome h2{
+    font-size:38px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.welcome p{
+    font-size:22px;
+    line-height:1.9;
+    color:#444;
+    text-align:justify;
+}
+
+.read-btn{
+    display:block;
+    width:100%;
+    background:#FFC107;
+    color:#000;
+    text-align:center;
+    padding:18px;
+    border-radius:50px;
+    text-decoration:none;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:25px;
+}
