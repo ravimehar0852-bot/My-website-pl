@@ -169,3 +169,8 @@ body{
     display:block;
     object-fit:cover;
 }
+@media (min-width:992px){
+    .container{
+        max-width:1100px;
+    }
+}
