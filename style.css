@@ -437,12 +437,12 @@ body{
 .routes-page-title{
   font-size: 28px;
   font-weight: 800;
-  color: #FFC328;
+  color: #000;
   margin-bottom: 10px;
 }
 .routes-page-sub{
   font-size: 15px;
-  color: #fff;
+  color: #FFC328;
   max-width: 500px;
   margin: 0 auto;
   line-height: 1.5;
