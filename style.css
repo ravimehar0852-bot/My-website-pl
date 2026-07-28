@@ -14,13 +14,13 @@ body{
 }
 
 /* Header */
-.header {
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 18px;
-  border-bottom: 3px solid #f4b400;
+.header{
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 18px;
+    border-bottom:3px solid #f4b400;
 }
 .logo { display: flex; align-items: center; }
 .logo svg { width: 70px; height: 45px; }
