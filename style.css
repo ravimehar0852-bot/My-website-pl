@@ -325,3 +325,99 @@ body{
 }
 
 }
+.taxi-section{
+  padding: 30px 20px;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.taxi-heading{
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.taxi-slider{
+  overflow: hidden;
+  position: relative;
+}
+
+.taxi-track{
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.taxi-card{
+  flex: 0 0 calc(70% - 15px);
+  margin-right: 15px;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: left;
+  background: #fff;
+}
+
+.taxi-badge{
+  display: inline-block;
+  background: #f6c92e;
+  color: #000;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.taxi-img{
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px 0 20px;
+}
+
+.taxi-title{
+  font-size: 18px;
+  font-weight: 700;
+  margin: 5px 0;
+}
+
+.taxi-price{
+  font-size: 16px;
+  font-weight: 600;
+  margin: 5px 0 15px;
+}
+
+.taxi-btn{
+  display: inline-block;
+  background: #f6c92e;
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+}
+
+.taxi-dots{
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.taxi-dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #b0b0b0;
+  cursor: pointer;
+}
+
+.taxi-dot.active{
+  background: #f6c92e;
+}
+
+@media(min-width: 768px){
+  .taxi-card{
+    flex: 0 0 calc(33.333% - 15px);
+  }
+}
