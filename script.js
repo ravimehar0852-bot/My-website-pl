@@ -153,3 +153,136 @@ document.addEventListener('DOMContentLoaded', () => {
   goToSlide(1, false);
   startAutoSlide();
 });
+const routesData = [
+  {
+    title: "Lucknow To Varanasi Cabs",
+    destImg: "images/varanasi.jpg",
+    carImg: "images/innova.png",
+    desc: "Lucknow To Varanasi Taxi Service, Lucknow To Varanasi Cabs, Fare Starts @Rs. 9/km with KTS Cabs",
+    vehicle: "Ertiga",
+    price: "₹15.00/ KM",
+    phone: "918737993690"
+  },
+  {
+    title: "Lucknow To Ayodhya Cabs",
+    destImg: "images/ayodhya.jpg",
+    carImg: "images/innova.png",
+    desc: "Lucknow To Ayodhya Taxi, Lucknow To Ayodhya Cabs, Lucknow To Ayodhya Cab Booking @Rs. 9/km With KTS Cabs",
+    vehicle: "Toyota Etios",
+    price: "₹12.00/ KM",
+    phone: "918737993690"
+  },
+  {
+    title: "Lucknow to Agra Cabs",
+    destImg: "images/agra.jpg",
+    carImg: "images/innova.png",
+    desc: "Lucknow To Agra Taxi Service, Lucknow To Agra Cabs Fare Starts @Rs. 9/km with KTS Cabs",
+    vehicle: "SUV Toyota Innova",
+    price: "₹20.00/ KM",
+    phone: "918737993690"
+  },
+  {
+    title: "Lucknow to Noida Cabs",
+    destImg: "images/noida.jpg",
+    carImg: "images/innova.png",
+    desc: "Lucknow To Noida Cab Service, Lucknow To Noida Taxi Service, Lucknow To Noida Cabs Fare Starts @Rs. 9/km With KTS Cabs",
+    vehicle: "Sedan CNG",
+    price: "₹12.00/ KM",
+    phone: "918737993690"
+  },
+  {
+    title: "Lucknow to Nainital Cabs",
+    destImg: "images/nainital.jpg",
+    carImg: "images/innova.png",
+    desc: "Lucknow To Nainital Taxi, Lucknow To Nainital Cab Booking with KTS Cabs",
+    vehicle: "Innova",
+    price: "₹18.00/ KM",
+    phone: "918737993690"
+  },
+  {
+    title: "Lucknow to Delhi Cabs",
+    destImg: "images/delhi.jpg",
+    carImg: "images/innova.png",
+    desc: "Lucknow To Delhi Cabs, Lucknow To Delhi Taxi Service, Lucknow To Delhi Cab Service, Fare Starts @Rs. 11/km With KTS Cabs",
+    vehicle: "Ertiga",
+    price: "₹15.00/ KM",
+    phone: "918737993690"
+  },
+  {
+    title: "Lucknow To Naimisharanya One Way Taxi Service",
+    destImg: "images/naimisharanya.jpg",
+    carImg: "images/innova.png",
+    desc: "Lucknow To Naimisharanya Taxi Service, Lucknow To Naimisharanya One Way Taxi Service Fare Starts @ Rs. 9/km with KTS Cabs",
+    vehicle: "Ertiga",
+    price: "₹15.00/ KM",
+    phone: "918737993690"
+  },
+  {
+    title: "Lucknow To Allahabad Cabs",
+    destImg: "images/allahabad.jpg",
+    carImg: "images/innova.png",
+    desc: "Lucknow To Allahabad Taxi Service, Lucknow To Prayagraj Cabs, Fare Start @ Rs.9/km with KTS Cabs",
+    vehicle: "Ertiga",
+    price: "₹15.00/ KM",
+    phone: "918737993690"
+  }
+];
+
+function renderRoutes(){
+  const list = document.getElementById("routesList");
+  if(!list) return;
+  list.innerHTML = "";
+
+  routesData.forEach(route => {
+    const card = document.createElement("div");
+    card.className = "route-card";
+
+    card.innerHTML = `
+      <div class="route-card-top">
+        <div class="route-card-brand">
+          <span class="mini-car">🚕</span>
+          <span class="mini-text">KTS CABS</span>
+        </div>
+        <img class="route-card-vehicle-img" src="${route.carImg}" alt="${route.title} car">
+        <h3 class="route-card-title">${route.title}</h3>
+        <img class="route-card-dest-img" src="${route.destImg}" alt="${route.title} destination">
+      </div>
+      <div class="route-card-bottom">
+        <p class="route-card-desc">${route.desc}</p>
+        <div class="route-card-meta">
+          <div class="meta-vehicle">
+            <span class="meta-label">Vehicle Type</span>
+            <span class="meta-badge">${route.vehicle}</span>
+          </div>
+          <div class="meta-price">
+            <span class="meta-label">Price</span>
+            <span class="meta-badge">${route.price}</span>
+          </div>
+        </div>
+        <a class="route-card-btn" href="https://wa.me/${route.phone}?text=Hi%2C%20I%20want%20to%20book%20${encodeURIComponent(route.title)}" target="_blank">
+          Book Now
+        </a>
+      </div>
+    `;
+
+    list.appendChild(card);
+  });
+
+  observeCards();
+}
+
+function observeCards(){
+  const cards = document.querySelectorAll(".route-card");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("reveal");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  cards.forEach(card => observer.observe(card));
+}
+
+document.addEventListener("DOMContentLoaded", renderRoutes);
