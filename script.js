@@ -242,7 +242,7 @@ function renderRoutes(){
           <span class="mini-car">🚕</span>
           <span class="mini-text">KTS CABS</span>
         </div>
-        <img class="route-card-vehicle-img" src="${route.carImg}" alt="${route.title} car">
+       <img src="${route.image}" alt="${route.title}">
         <h3 class="route-card-title">${route.title}</h3>
         <img class="route-card-dest-img" src="${route.destImg}" alt="${route.title} destination">
       </div>
