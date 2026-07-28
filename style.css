@@ -160,14 +160,14 @@ body{
 
 .read-more-btn{
     display: block;
-    width: 100%;
-    padding: 22px;
+    width: 180%;
+    padding: 12px 0;
     border: none;
     border-radius: 60px;
     background: #FFC328;
     color: #000;
     font-family: 'Montserrat', sans-serif;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 400;
     cursor: pointer;
 }
