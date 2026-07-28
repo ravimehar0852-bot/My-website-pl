@@ -15,12 +15,15 @@ body{
 
 /* Header */
 .header{
+    width:100%;
+    margin:0;
+    padding:14px 18px;
     background:#fff;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:14px 18px;
     border-bottom:3px solid #f4b400;
+    box-sizing:border-box;
 }
 .logo { display: flex; align-items: center; }
 .logo svg { width: 70px; height: 45px; }
