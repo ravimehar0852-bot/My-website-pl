@@ -159,17 +159,20 @@ body{
 }
 
 .read-more-btn{
-    display: block;
-    width: 180%;
-    padding: 12px 0;
+    display: inline-block;
+    width: auto;
+    padding: 14px 35px;
     border: none;
-    border-radius: 60px;
+    border-radius: 50px;
     background: #FFC328;
     color: #000;
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
     cursor: pointer;
+    margin: 0 auto;
 }
 .read-more-btn{
     text-decoration: none;
@@ -327,7 +330,7 @@ body{
 }
 .taxi-section{
   padding: 30px 20px;
-  font-family: 'Poppins', Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
       background-color: #ffffff
 }
 
