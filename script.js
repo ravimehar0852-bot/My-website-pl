@@ -238,10 +238,9 @@ function renderRoutes(){
 
     card.innerHTML = `
   <div class="route-card-top">
-    <div class="route-image-box">
-      <img class="route-bg-img" src="${route.image}" alt="${route.title}">
-      <img class="route-car-img" src="images/innova.png" alt="Car">
-    </div>
+   <div class="route-image-box">
+  <img class="route-bg-img" src="${route.image}" alt="${route.title}">
+</div>
 
     <h3 class="route-card-title">${route.title}</h3>
   </div>
