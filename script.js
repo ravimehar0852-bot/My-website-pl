@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 const routesData = [
   {
-    title: "Lucknow To Varanasi Cabs",
+    
     image: "images/lucknow-varanasi-banner.webp",
     desc: "Lucknow To Varanasi Taxi Service, Lucknow To Varanasi Cabs, Fare Starts @Rs. 9/km with KTS Cabs",
     vehicle: "Ertiga",
