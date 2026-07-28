@@ -64,3 +64,38 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.getElementById('taxiTrack');
+  const dotsWrap = document.getElementById('taxiDots');
+  const cards = track.children;
+  let index = 0;
+
+  // dots banao
+  for (let i = 0; i < cards.length; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('taxi-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsWrap.appendChild(dot);
+  }
+  const dots = dotsWrap.children;
+
+  function goToSlide(i) {
+    index = i;
+    const cardWidth = cards[0].getBoundingClientRect().width + 15; // margin included
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+    [...dots].forEach(d => d.classList.remove('active'));
+    dots[index].classList.add('active');
+  }
+
+  // swipe support (mobile)
+  let startX = 0;
+  track.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+  track.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (diff > 50 && index < cards.length - 1) goToSlide(index + 1);
+    if (diff < -50 && index > 0) goToSlide(index - 1);
+  });
+
+  window.addEventListener('resize', () => goToSlide(index));
+});
