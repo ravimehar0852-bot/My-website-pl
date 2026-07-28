@@ -158,25 +158,23 @@ body{
     padding: 40px 0px;
 }
 
-.read-more-btn{
-    display: inline-block;
-    width: auto;
-    padding: 14px 35px;
-    border: none;
-    border-radius: 50px;
-    background: #FFC328;
-    color: #000;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-    margin: 0 auto;
+.read-more-wrapper{
+  text-align: center;      /* button ko center karega */
+  margin-top: 20px;
 }
+
 .read-more-btn{
-    text-decoration: none;
-    text-align: center;
+  display: inline-block;   /* full width lena band karega */
+  width: auto;
+  background: #f6c92e;
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 12px 35px;      /* size chota/control karne ke liye */
+  border-radius: 25px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
 }
 .about-image{
     width:100%;
