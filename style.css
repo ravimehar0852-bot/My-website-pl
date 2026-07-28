@@ -164,15 +164,18 @@ body{
 }
 
 .read-more-btn{
-  display: inline-block;   /* full width lena band karega */
-  width: 500;
+  display: block;
+  width: 100%;
+  max-width: 650px;      /* container ke hisaab se adjust kar lena */
+  margin: 20px auto;     /* center + spacing */
   background: #f6c92e;
   color: #000;
   font-weight: 700;
   text-decoration: none;
-  padding: 12px 35px;      /* size chota/control karne ke liye */
-  border-radius: 25px;
-  font-size: 15px;
+  text-align: center;
+  padding: 16px 0;
+  border-radius: 30px;   /* pehle wale jitna rounded */
+  font-size: 17px;
   border: none;
   cursor: pointer;
 }
