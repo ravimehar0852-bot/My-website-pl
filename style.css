@@ -490,8 +490,8 @@ body{
 .route-card-brand .mini-text{
   font-weight: 700;
   font-size: 13px;
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #555;
   padding: 3px 8px;
   border-radius: 4px;
 }
