@@ -430,3 +430,160 @@ body{
     flex: 0 0 calc(33.333% - 15px);
   }
 }
+.routes-title-section{
+  text-align: center;
+  padding: 30px 20px 10px;
+}
+.routes-page-title{
+  font-size: 28px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 10px;
+}
+.routes-page-sub{
+  font-size: 15px;
+  color: #555;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+.routes-list{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 25px 16px 20px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.route-card{
+  background: #f6c92e;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.route-card.reveal{
+  opacity: 1;
+  transform: translateY(0);
+}
+.route-card-top{
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px 16px 0;
+  min-height: 190px;
+  overflow: hidden;
+  position: relative;
+}
+.route-card-brand{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: absolute;
+  top: 14px;
+  left: 16px;
+}
+.route-card-brand .mini-car{
+  font-size: 18px;
+}
+.route-card-brand .mini-text{
+  font-weight: 700;
+  font-size: 13px;
+  background: #000;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.route-card-title{
+  font-size: 20px;
+  font-weight: 700;
+  font-style: italic;
+  color: #111;
+  margin-top: 44px;
+  line-height: 1.25;
+  max-width: 45%;
+}
+.route-card-dest-img{
+  width: 45%;
+  max-width: 220px;
+  border-radius: 12px;
+  object-fit: cover;
+  height: 140px;
+  margin-top: 44px;
+  float: right;
+}
+.route-card-vehicle-img{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 55%;
+  max-width: 260px;
+  object-fit: contain;
+}
+.route-card-bottom{
+  background: #fff9ec;
+  border-radius: 0 0 16px 16px;
+  padding: 16px;
+}
+.route-card-desc{
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.route-card-meta{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+.meta-label{
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+  display: block;
+}
+.meta-badge{
+  background: #f6c92e;
+  color: #000;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: inline-block;
+}
+.meta-price{
+  text-align: right;
+}
+.route-card-btn{
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #000;
+  color: #f6c92e;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 13px 0;
+  border-radius: 25px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+@media(min-width: 768px){
+  .routes-list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .routes-page-title{
+    font-size: 34px;
+  }
+}
+@media(min-width: 1100px){
+  .routes-list{
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1100px;
+  }
+    }
