@@ -237,32 +237,37 @@ function renderRoutes(){
     card.className = "route-card";
 
     card.innerHTML = `
-      <div class="route-card-top">
-        <div class="route-card-brand">
-          <span class="mini-car">🚕</span>
-          <span class="mini-text">KTS CABS</span>
-        </div>
-        <img class="route-card-vehicle-img" src="${route.carImg}" alt="${route.title} car">
-        <h3 class="route-card-title">${route.title}</h3>
-        <img class="route-card-dest-img" src="${route.destImg}" alt="${route.title} destination">
+  <div class="route-card-top">
+    <div class="route-image-box">
+      <img class="route-bg-img" src="${route.image}" alt="${route.title}">
+      <img class="route-car-img" src="images/innova.png" alt="Car">
+    </div>
+
+    <h3 class="route-card-title">${route.title}</h3>
+  </div>
+
+  <div class="route-card-bottom">
+    <p class="route-card-desc">${route.desc}</p>
+
+    <div class="route-card-meta">
+      <div class="meta-vehicle">
+        <span class="meta-label">Vehicle Type</span>
+        <span class="meta-badge">${route.vehicle}</span>
       </div>
-      <div class="route-card-bottom">
-        <p class="route-card-desc">${route.desc}</p>
-        <div class="route-card-meta">
-          <div class="meta-vehicle">
-            <span class="meta-label">Vehicle Type</span>
-            <span class="meta-badge">${route.vehicle}</span>
-          </div>
-          <div class="meta-price">
-            <span class="meta-label">Price</span>
-            <span class="meta-badge">${route.price}</span>
-          </div>
-        </div>
-        <a class="route-card-btn" href="https://wa.me/${route.phone}?text=Hi%2C%20I%20want%20to%20book%20${encodeURIComponent(route.title)}" target="_blank">
-          Book Now
-        </a>
+
+      <div class="meta-price">
+        <span class="meta-label">Price</span>
+        <span class="meta-badge">${route.price}</span>
       </div>
-    `;
+    </div>
+
+    <a class="route-card-btn"
+      href="https://wa.me/${route.phone}?text=Hi%2C%20I%20want%20to%20book%20${encodeURIComponent(route.title)}"
+      target="_blank">
+      Book Now
+    </a>
+  </div>
+`;
 
     list.appendChild(card);
   });
