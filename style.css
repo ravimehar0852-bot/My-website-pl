@@ -594,3 +594,19 @@ body{
     max-width: 1100px;
   }
     }
+.route-image-box{
+    position:relative;
+}
+
+.route-bg-img{
+    width:100%;
+    display:block;
+}
+
+.route-car-img{
+    position:absolute;
+    bottom:10px;
+    left:50%;
+    transform:translateX(-50%);
+    width:180px;
+}
