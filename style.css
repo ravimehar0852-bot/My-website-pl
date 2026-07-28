@@ -9,7 +9,7 @@ body{
     width:100%;
     max-width:1200px;
     margin:0 auto;
-    padding:20px;
+    padding:18px;
     box-sizing:border-box;
 }
 
@@ -152,7 +152,7 @@ body{
     color: #000;
     text-align: justify;
     margin-bottom: 45px;
-    padding: 40px 20px;
+    padding: 40px 18px;
 }
 
 .read-more-btn{
