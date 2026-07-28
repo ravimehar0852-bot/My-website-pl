@@ -67,38 +67,66 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   const track = document.getElementById('taxiTrack');
   const dotsWrap = document.getElementById('taxiDots');
-  const cards = track.children;
-  let index = 0;
+  const allCards = track.children;          // clones included
+  const realCount = allCards.length - 2;    // asli cards ki count (clones minus)
+  let index = 1;                            // shuru real first card se (clone ke baad)
   let autoSlide;
+  let isTransitioning = false;
 
-  // dots banao
-  for (let i = 0; i < cards.length; i++) {
+  // dots sirf real cards ke liye banao
+  for (let i = 0; i < realCount; i++) {
     const dot = document.createElement('div');
     dot.classList.add('taxi-dot');
     if (i === 0) dot.classList.add('active');
     dot.addEventListener('click', () => {
-      goToSlide(i);
+      goToSlide(i + 1);
       resetAutoSlide();
     });
     dotsWrap.appendChild(dot);
   }
   const dots = dotsWrap.children;
 
-  function goToSlide(i) {
-    index = i;
-    const cardWidth = cards[0].getBoundingClientRect().width + 15; // margin included
-    track.style.transform = `translateX(-${index * cardWidth}px)`;
+  function updateDots(realIndex) {
     [...dots].forEach(d => d.classList.remove('active'));
-    dots[index].classList.add('active');
+    dots[realIndex].classList.add('active');
+  }
+
+  function getCardWidth() {
+    return allCards[0].getBoundingClientRect().width + 15;
+  }
+
+  function goToSlide(i, animate = true) {
+    isTransitioning = animate;
+    track.style.transition = animate ? 'transform 0.5s ease' : 'none';
+    track.style.transform = `translateX(-${i * getCardWidth()}px)`;
+    index = i;
+
+    // dots update (real index nikaalo)
+    let realIndex = index - 1;
+    if (realIndex < 0) realIndex = realCount - 1;
+    if (realIndex >= realCount) realIndex = 0;
+    updateDots(realIndex);
   }
 
   function nextSlide() {
-    index = (index + 1) % cards.length;   // last ke baad first pe wapas
-    goToSlide(index);
+    if (isTransitioning) return;
+    goToSlide(index + 1);
   }
 
+  // Jab transition khatam ho aur hum clone pe pahunch jaayein, silently real slide pe jump karo
+  track.addEventListener('transitionend', () => {
+    isTransitioning = false;
+    if (index === allCards.length - 1) {
+      // last clone pe pahunche -> silently real first pe jao
+      goToSlide(1, false);
+    } else if (index === 0) {
+      // first clone pe pahunche -> silently real last pe jao
+      goToSlide(realCount, false);
+    }
+  });
+
   function startAutoSlide() {
-    autoSlide = setInterval(nextSlide, 3000); // har 3 second me slide badlegi
+    autoSlide = setInterval(nextSlide, 3000);
   }
 
   function resetAutoSlide() {
@@ -114,13 +142,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   track.addEventListener('touchend', e => {
     const diff = startX - e.changedTouches[0].clientX;
-    if (diff > 50) index = (index + 1) % cards.length;       // swipe left -> next
-    if (diff < -50) index = (index - 1 + cards.length) % cards.length; // swipe right -> prev
-    goToSlide(index);
+    if (diff > 50) goToSlide(index + 1);
+    if (diff < -50) goToSlide(index - 1);
     resetAutoSlide();
   });
 
-  window.addEventListener('resize', () => goToSlide(index));
+  window.addEventListener('resize', () => goToSlide(index, false));
 
-  startAutoSlide(); // auto-slide shuru
+  // initial position set karo (clone ke baad wale real first card pe)
+  goToSlide(1, false);
+  startAutoSlide();
 });
