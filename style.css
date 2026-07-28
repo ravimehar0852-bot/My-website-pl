@@ -1,7 +1,7 @@
 body{
     margin:0;
     padding:0;
-        background-color: #ffffff;  
+        background-color: #000;  
     font-family:'Montserrat',sans-serif;
 }
 
@@ -340,6 +340,7 @@ body{
 .taxi-slider{
   overflow: hidden;
   position: relative;
+      background-color: #ffffff;  
 }
 
 .taxi-track{
