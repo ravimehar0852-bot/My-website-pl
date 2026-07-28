@@ -188,30 +188,36 @@ body{
 
 .about-banner{
     width:100%;
-    height:280px;
-    background:url("images/about-banner.jpg") center center/cover no-repeat;
+    height:300px;
+    background-image:url("images/about-banner.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
     position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .about-overlay{
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.55);
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    color:#fff;
 }
 
 .about-overlay h1{
-    font-family:'Poppins',sans-serif;
-    font-size:46px;
+    color:#fff;
+    font-size:52px;
     font-weight:700;
-    margin-bottom:15px;
+    margin:0 0 15px;
 }
 
 .breadcrumb{
+    color:#fff;
     font-size:24px;
     font-weight:600;
 }
@@ -226,19 +232,17 @@ body{
 }
 
 @media(max-width:768px){
+    .about-banner{
+        height:220px;
+    }
 
-.about-banner{
-    height:220px;
-}
+    .about-overlay h1{
+        font-size:38px;
+    }
 
-.about-overlay h1{
-    font-size:34px;
-}
-
-.breadcrumb{
-    font-size:20px;
-}
-
+    .breadcrumb{
+        font-size:18px;
+    }
 }
 /* ===========================
    ABOUT PAGE BANNER
