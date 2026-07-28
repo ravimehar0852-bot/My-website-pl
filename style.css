@@ -481,13 +481,15 @@ body{
 }
 
 .route-card-brand{
-  display: flex;
-  align-items: center;
-  gap: 6px;
   position: absolute;
   top: 14px;
   left: 16px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
+
 .route-card-brand .mini-car{
   font-size: 18px;
 }
@@ -498,32 +500,33 @@ body{
   color: #555;
   padding: 3px 8px;
   border-radius: 4px;
-}
-.route-card-title{
-  font-size: 20px;
+}.route-card-title{
+  position: absolute;
+  top: 54px;
+  left: 16px;
+  z-index: 3;
+  font-size: 19px;
   font-weight: 700;
   font-style: italic;
-  color: #111;
-  margin-top: 44px;
+  max-width: 50%;
   line-height: 1.25;
-  max-width: 45%;
 }
 .route-card-dest-img{
-  width: 45%;
-  max-width: 220px;
-  border-radius: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 100%;
   object-fit: cover;
-  height: 140px;
-  margin-top: 44px;
-  float: right;
 }
+
 .route-card-vehicle-img{
   position: absolute;
-  left: 0;
   bottom: 0;
-  width: 55%;
-  max-width: 260px;
+  left: 0;
+  width: 60%;
   object-fit: contain;
+  z-index: 2;
 }
 .route-card-bottom{
   background: #fff9ec;
