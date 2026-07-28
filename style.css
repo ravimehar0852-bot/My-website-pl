@@ -372,12 +372,12 @@ body{
 
 .taxy-card img{
     width: 100%;
-
+    max-height: 160px;
+    height: auto;
     object-fit: contain;
-    object-position: center;
     display: block;
     margin: 10px auto;
-    }
+}
 
 .taxi-title{
   font-size: 18px;
