@@ -165,7 +165,7 @@ body{
 
 .read-more-btn{
   display: inline-block;   /* full width lena band karega */
-  width: auto;
+  width: 200;
   background: #f6c92e;
   color: #000;
   font-weight: 700;
