@@ -244,7 +244,7 @@ function renderRoutes(){
         </div>
        <img src="${route.image}" alt="${route.title}">
         <h3 class="route-card-title">${route.title}</h3>
-        <img class="route-card-dest-img" src="${route.destImg}" alt="${route.title} destination">
+        <img src="${route.image}" alt="${route.title}">
       </div>
       <div class="route-card-bottom">
         <p class="route-card-desc">${route.desc}</p>
