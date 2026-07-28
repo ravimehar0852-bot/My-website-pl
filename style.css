@@ -433,8 +433,10 @@ body{
 .routes-title-section{
   text-align: center;
   padding: 30px 20px 10px;
+    background: #FFC328;
 }
 .routes-page-title{
+    
   font-size: 28px;
   font-weight: 800;
   color: #000;
