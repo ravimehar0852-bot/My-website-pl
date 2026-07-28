@@ -69,13 +69,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const dotsWrap = document.getElementById('taxiDots');
   const cards = track.children;
   let index = 0;
+  let autoSlide;
 
   // dots banao
   for (let i = 0; i < cards.length; i++) {
     const dot = document.createElement('div');
     dot.classList.add('taxi-dot');
     if (i === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goToSlide(i));
+    dot.addEventListener('click', () => {
+      goToSlide(i);
+      resetAutoSlide();
+    });
     dotsWrap.appendChild(dot);
   }
   const dots = dotsWrap.children;
@@ -88,14 +92,35 @@ document.addEventListener('DOMContentLoaded', () => {
     dots[index].classList.add('active');
   }
 
+  function nextSlide() {
+    index = (index + 1) % cards.length;   // last ke baad first pe wapas
+    goToSlide(index);
+  }
+
+  function startAutoSlide() {
+    autoSlide = setInterval(nextSlide, 3000); // har 3 second me slide badlegi
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlide);
+    startAutoSlide();
+  }
+
   // swipe support (mobile)
   let startX = 0;
-  track.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+  track.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    clearInterval(autoSlide);
+  });
   track.addEventListener('touchend', e => {
     const diff = startX - e.changedTouches[0].clientX;
-    if (diff > 50 && index < cards.length - 1) goToSlide(index + 1);
-    if (diff < -50 && index > 0) goToSlide(index - 1);
+    if (diff > 50) index = (index + 1) % cards.length;       // swipe left -> next
+    if (diff < -50) index = (index - 1 + cards.length) % cards.length; // swipe right -> prev
+    goToSlide(index);
+    resetAutoSlide();
   });
 
   window.addEventListener('resize', () => goToSlide(index));
+
+  startAutoSlide(); // auto-slide shuru
 });
