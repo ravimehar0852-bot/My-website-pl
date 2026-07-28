@@ -25,10 +25,20 @@ body{
 .logo { display: flex; align-items: center; }
 .logo svg { width: 70px; height: 45px; }
 .logo-text { margin-left: -4px; }
-.logo-text .kts { font-weight: 800; font-size: 15px; letter-spacing: 0.5px; }
-.logo-text .cabs {
-  font-weight: 800; font-size: 15px; letter-spacing: 0.5px;
-  background: #000; color: #f4b400; padding: 0 4px;
+.logo-text .SS{
+    font-weight:800;
+    font-size:15px;
+    letter-spacing:.5px;
+    color:#000;
+}
+
+.logo-text .Taxy{
+    font-weight:800;
+    font-size:15px;
+    letter-spacing:.5px;
+    background:#000;
+    color:#f4b400;
+    padding:0 4px;
 }
 .phone-btn {
   background: #f4b400;
