@@ -145,8 +145,9 @@ body{
     font-weight: 900;
     line-height: 1.2;
     color: #000;
-    margin-bottom: 25px;
+    margin-bottom: 8px;
 }
+
 
 .about-section p{
     font-family: 'Montserrat', sans-serif;
@@ -155,10 +156,9 @@ body{
     line-height: 1.5;
     color: #000;
     text-align: justify;
-    margin-bottom: 45px;
-    padding: 40px 0px;
+    margin-bottom: 20px;
+    padding: 0;
 }
-
 .read-more-wrapper{
   text-align: center;      /* button ko center karega */
   margin-top: 20px;
