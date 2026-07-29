@@ -253,11 +253,7 @@ function renderRoutes(){
       </div>
     </div>
 
-    <a class="route-card-btn"
-      href="https://wa.me/${route.phone}?text=Hi%2C%20I%20want%20to%20book%20${encodeURIComponent(route.title)}"
-      target="_blank">
-      Book Now
-    </a>
+  
   </div>
 `;
 
