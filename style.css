@@ -529,9 +529,9 @@ body{
   z-index: 2;
 }
 .route-card-bottom{
-  background: #fff9ec;
+  background: #ffffff;
   border-radius: 0 0 16px 16px;
-  padding: 16px;
+  padding: 10px;
 }
 .route-card-desc{
   font-size: 15px;
