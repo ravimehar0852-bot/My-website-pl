@@ -474,11 +474,12 @@ body{
 }
 .route-card-top{
   position: relative;
-  height: 210px;
   border-radius: 16px 16px 0 0;
   overflow: hidden;
   padding: 0;
 }
+
+
 
 .route-card-brand{
   position: absolute;
@@ -598,11 +599,13 @@ body{
     position:relative;
 }
 
+
+
 .route-bg-img{
     width:100%;
+    height:auto;
     display:block;
 }
-
 .route-car-img{
     position:absolute;
     bottom:10px;
