@@ -461,13 +461,14 @@ body{
   margin: 0 auto;
 }
 .route-card{
-  background: #f6c92e;
+  background: transparent;
   border-radius: 20px;
-  padding: 10px;
+  padding: 0;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
+  overflow: hidden;
 }
 .route-card.reveal{
   opacity: 1;
