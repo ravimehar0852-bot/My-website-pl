@@ -163,63 +163,56 @@ const routesData = [
     phone: "918737993690"
   },
   {
-    title: "Lucknow To Ayodhya Cabs",
-    destImg: "images/ayodhya.jpg",
-    carImg: "images/innova.png",
+    title: " ",
+    image: "images/lucknow-ayodhya-banner.webp",
     desc: "Lucknow To Ayodhya Taxi, Lucknow To Ayodhya Cabs, Lucknow To Ayodhya Cab Booking @Rs. 9/km With KTS Cabs",
     vehicle: "Toyota Etios",
     price: "₹12.00/ KM",
     phone: "918737993690"
   },
   {
-    title: "Lucknow to Agra Cabs",
-    destImg: "images/agra.jpg",
-    carImg: "images/innova.png",
+    title: " ",
+    image: "images/lucknow-agra-banner.webp",
     desc: "Lucknow To Agra Taxi Service, Lucknow To Agra Cabs Fare Starts @Rs. 9/km with KTS Cabs",
     vehicle: "SUV Toyota Innova",
     price: "₹20.00/ KM",
     phone: "918737993690"
   },
   {
-    title: "Lucknow to Noida Cabs",
-    destImg: "images/noida.jpg",
-    carImg: "images/innova.png",
+    title: " ",
+    image: "images/lucknow-noida-banner.webp",
     desc: "Lucknow To Noida Cab Service, Lucknow To Noida Taxi Service, Lucknow To Noida Cabs Fare Starts @Rs. 9/km With KTS Cabs",
     vehicle: "Sedan CNG",
     price: "₹12.00/ KM",
     phone: "918737993690"
   },
   {
-    title: "Lucknow to Nainital Cabs",
-    destImg: "images/nainital.jpg",
-    carImg: "images/innova.png",
+    title: " ",
+    image: "images/lucknow-nainital-banner.webp",
     desc: "Lucknow To Nainital Taxi, Lucknow To Nainital Cab Booking with KTS Cabs",
     vehicle: "Innova",
     price: "₹18.00/ KM",
     phone: "918737993690"
   },
   {
-    title: "Lucknow to Delhi Cabs",
-    destImg: "images/delhi.jpg",
-    carImg: "images/innova.png",
+    title: " ",
+    image: "images/lucknow-delhi-banner.webp",
     desc: "Lucknow To Delhi Cabs, Lucknow To Delhi Taxi Service, Lucknow To Delhi Cab Service, Fare Starts @Rs. 11/km With KTS Cabs",
     vehicle: "Ertiga",
     price: "₹15.00/ KM",
     phone: "918737993690"
   },
   {
-    title: "Lucknow To Naimisharanya One Way Taxi Service",
-    destImg: "images/naimisharanya.jpg",
-    carImg: "images/innova.png",
+    title: " ",
+    image: "images/lucknow-naimisharanya-banner.webp",
     desc: "Lucknow To Naimisharanya Taxi Service, Lucknow To Naimisharanya One Way Taxi Service Fare Starts @ Rs. 9/km with KTS Cabs",
     vehicle: "Ertiga",
     price: "₹15.00/ KM",
     phone: "918737993690"
   },
   {
-    title: "Lucknow To Allahabad Cabs",
-    destImg: "images/allahabad.jpg",
-    carImg: "images/innova.png",
+    title: " ",
+    image: "images/lucknow-allahabad-banner.webp",
     desc: "Lucknow To Allahabad Taxi Service, Lucknow To Prayagraj Cabs, Fare Start @ Rs.9/km with KTS Cabs",
     vehicle: "Ertiga",
     price: "₹15.00/ KM",
