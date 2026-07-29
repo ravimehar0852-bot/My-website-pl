@@ -193,70 +193,7 @@ body{
         max-width:1100px;
     }
 }
-/* ===== ABOUT BANNER ===== */
 
-.about-banner{
-    width:100vw;
-    margin-left:calc(50% - 50vw);
-    margin-right:calc(50% - 50vw);
-    height:260px;
-
-    background:url("images/about-banner.png") center center/cover no-repeat;
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.about-overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.45);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-
-.about-overlay h1{
-    color:#fff;
-    font-size:52px;
-    font-weight:700;
-    margin:0 0 15px;
-}
-
-.breadcrumb{
-    color:#fff;
-    font-size:24px;
-    font-weight:600;
-}
-
-.breadcrumb a{
-    color:#fff;
-    text-decoration:none;
-}
-
-.breadcrumb span{
-    margin:0 8px;
-}
-
-@media(max-width:768px){
-    .about-banner{
-        height:220px;
-    }
-
-    .about-overlay h1{
-        font-size:38px;
-    }
-
-    .breadcrumb{
-        font-size:18px;
-    }
-}
 /* ===========================
    ABOUT PAGE BANNER
 =========================== */
