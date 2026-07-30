@@ -1111,3 +1111,168 @@ body{
   border-radius: 25px;
   white-space: nowrap;
 }
+.summary-value-small{
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 10px;
+}
+
+.guest-details-box{
+  border: 1px solid #eee;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.guest-details-header{
+  background: #f5f5f5;
+  font-weight: 800;
+  font-size: 18px;
+  padding: 16px 20px;
+}
+.guest-form{
+  padding: 20px;
+}
+.guest-form label{
+  display: block;
+  font-weight: 700;
+  font-size: 15px;
+  margin: 16px 0 8px;
+}
+.guest-form label:first-child{ margin-top: 0; }
+
+.guest-field{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+.guest-field i{ color: #666; width: 16px; }
+.guest-field input,
+.guest-field select{
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 15px;
+  background: transparent;
+}
+
+.guest-datetime-row{
+  display: flex;
+  gap: 12px;
+}
+.guest-datetime-row .guest-field{ flex: 1; }
+
+.checkbox-label{
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  margin-top: 14px !important;
+}
+.checkbox-label input{ width: 18px; height: 18px; }
+
+.fare-summary-box{
+  border: 1px solid #eee;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.fare-summary-header{
+  background: #f5f5f5;
+  font-weight: 800;
+  font-size: 18px;
+  padding: 16px 20px;
+}
+.fare-summary-body{
+  padding: 20px;
+}
+
+.fare-cab-info{
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.fare-cab-img{
+  width: 100px;
+  height: auto;
+}
+.fare-cab-title{
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0 0 4px;
+}
+.fare-stars{
+  color: #f4b400;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.fare-cab-subtitle, .fare-cab-similar{
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+}
+
+.coupon-label{
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.coupon-row{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.coupon-row input{
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  outline: none;
+}
+.coupon-row button{
+  background: #f4b400;
+  border: none;
+  border-radius: 8px;
+  padding: 0 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.fare-line{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.fare-line.highlight{ color: #f4b400; font-weight: 700; }
+.fare-line.bold{ font-weight: 800; font-size: 17px; border-bottom: none; }
+
+.fare-note{
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 16px;
+}
+
+.advance-payment-select{
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+.pay-now-btn{
+  width: 100%;
+  background: #f4b400;
+  border: none;
+  border-radius: 30px;
+  padding: 16px 0;
+  font-weight: 800;
+  font-size: 16px;
+  cursor: pointer;
+}
