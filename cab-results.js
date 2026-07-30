@@ -31,7 +31,11 @@ function renderCabList(){
           <p class="cab-result-price">₹ ${cab.price}</p>
           <a href="#" class="cab-fare-details">Fare Details &raquo;</a>
         </div>
-        <a href="#" class="cab-select-btn" data-cab-name="${cab.subtitle}" data-cab-subtitle="${cab.subtitle}" data-cab-image="${cab.image}" data-cab-price="${cab.price}">Select Cab</a>
+        <a href="#" class="cab-select-btn"
+           data-cab-name="${cab.name}"
+           data-cab-subtitle="${cab.subtitle}"
+           data-cab-image="${cab.image}"
+           data-cab-price="${cab.price}">Select Cab</a>
       </div>
     `;
     container.appendChild(card);
@@ -39,6 +43,8 @@ function renderCabList(){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  // ---- Booking summary display (from index.html search) ----
   const params = new URLSearchParams(window.location.search);
 
   const bookingType = params.get('bookingType') || '--';
@@ -53,17 +59,34 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('summaryRoute').textContent = `Route: ${from} -> ${to}`;
 
   renderCabList();
-});
-let selectedCab = null;
+
+  // ---- Select Cab popup logic ----
+  const modal = document.getElementById('selectCabModal');
+  const closeBtn = document.getElementById('modalCloseBtn');
+  const submitBtn = document.getElementById('modalSubmitBtn');
+
+  let selectedCab = null;
 
   document.addEventListener('click', (e) => {
     if (e.target.classList.contains('cab-select-btn')) {
+      e.preventDefault();
       selectedCab = {
         name: e.target.dataset.cabName || '',
         subtitle: e.target.dataset.cabSubtitle || '',
         image: e.target.dataset.cabImage || '',
         price: e.target.dataset.cabPrice || 0
       };
+      modal.style.display = 'flex';
+    }
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
     }
   });
 
@@ -74,13 +97,12 @@ let selectedCab = null;
       return;
     }
 
-    const urlParams = new URLSearchParams(window.location.search);
     const checkoutParams = new URLSearchParams({
-      bookingType: urlParams.get('bookingType') || '',
-      dateTime: urlParams.get('dateTime') || '',
-      tripType: urlParams.get('tripType') || '',
-      from: urlParams.get('from') || '',
-      to: urlParams.get('to') || '',
+      bookingType: params.get('bookingType') || '',
+      dateTime: params.get('dateTime') || '',
+      tripType: params.get('tripType') || '',
+      from: params.get('from') || '',
+      to: params.get('to') || '',
       mobile: mobile,
       cabName: selectedCab ? selectedCab.name : '',
       cabSubtitle: selectedCab ? selectedCab.subtitle : '',
@@ -90,3 +112,6 @@ let selectedCab = null;
 
     window.location.href = 'checkout.html?' + checkoutParams.toString();
   });
+
+});
+                          
