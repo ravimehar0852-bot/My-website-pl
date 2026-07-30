@@ -100,16 +100,14 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      showCabResults({
+      const params = new URLSearchParams({
         bookingType: tripType + ' Usage',
         dateTime: `${date} ${time}`,
         tripType: tripType,
         from: fromCity,
         to: toCity
       });
-    });
-  }
-
+      window.location.href = 'cab-results.html?' + params.toString();
   // Search Cab button (Local)
   const searchCabLocal = document.getElementById('searchCabLocal');
   if (searchCabLocal) {
