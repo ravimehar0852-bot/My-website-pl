@@ -67,16 +67,18 @@ document.addEventListener('DOMContentLoaded', () => {
       alert(`Searching local cab: ${pkg}, ${hrsKms}...`);
     });
   }
-  // Toggle switching: One Way / Round Trip
-  const toggleBtns = document.querySelectorAll('.toggle-btn');
-  toggleBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      toggleBtns.forEach(b => {
-        b.classList.remove('active');
-        b.classList.add('inactive');
+  // Toggle switching (har .toggle-row ke andar alag-alag group, isliye scoped rakha)
+  document.querySelectorAll('.toggle-row').forEach(row => {
+    const btns = row.querySelectorAll('.toggle-btn');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => {
+          b.classList.remove('active');
+          b.classList.add('inactive');
+        });
+        btn.classList.remove('inactive');
+        btn.classList.add('active');
       });
-      btn.classList.remove('inactive');
-      btn.classList.add('active');
     });
   });
 
