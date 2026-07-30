@@ -87,6 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const fromCity = document.getElementById('fromCity').value.trim();
       const toCity = document.getElementById('toCity').value.trim();
       const mobile = document.getElementById('mobileNo').value.trim();
+      const date = document.getElementById('dateInput').value;
+      const time = document.getElementById('timeInput').value;
+      const tripType = document.querySelector('#outstationForm .toggle-btn.active').textContent;
 
       if (!fromCity || !toCity) {
         alert('Please enter both From City and To City.');
@@ -97,7 +100,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      alert(`Searching cabs from ${fromCity} to ${toCity}...`);
+      showCabResults({
+        bookingType: tripType + ' Usage',
+        dateTime: `${date} ${time}`,
+        tripType: tripType,
+        from: fromCity,
+        to: toCity
+      });
     });
   }
 
