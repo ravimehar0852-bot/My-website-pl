@@ -402,3 +402,125 @@ function renderFAQ(){
 }
 
 document.addEventListener("DOMContentLoaded", renderFAQ);
+const testimonialData = [
+  {
+    text: "I rely on KTS Cabs for all my travels in Kanpur, and they have never let me down. From the easy booking process to the courteous drivers and well-maintained cars, they consistently provide a reliable and comfortable service. KTS Cabs is my go-to choice for hassle-free transportation in Kanpur.",
+    name: "Karan Sahni, Kanpur"
+  },
+  {
+    text: "Exceptional service from KTS Cabs! The drivers are always on time, and the cars are clean and comfortable. I appreciate their commitment to safety and the straightforward pricing. It's refreshing to have a taxi service that values transparency. Highly recommend KTS Cabs for a stress-free ride.",
+    name: "Ashish Shukla, Varanasi"
+  },
+  {
+    text: "KTS Cabs exceeded my expectations. The website & Booking Process is very user-friendly, making it easy to book a cab on the go. The drivers are professional and friendly, creating a positive travel experience. Whether for airport transfers or local trips, KTS Cabs has become my preferred choice for reliable transportation in Lucknow.",
+    name: "Kamal Hasan, Lucknow"
+  },
+  {
+    text: "I've tried various taxi services in Ayodhya, and KTS Cabs stands out for its exceptional service. The drivers are knowledgeable about the city, and the vehicles are in excellent condition. I appreciate the consistency and reliability they offer. KTS Cabs has become my trusted travel companion in Ayodhya.",
+    name: "Sameer M., Ayodhya"
+  }
+];
+
+function renderTestimonials(){
+  const track = document.getElementById("testimonialTrack");
+  const dotsWrap = document.getElementById("testimonialDots");
+  if(!track) return;
+
+  track.innerHTML = "";
+  dotsWrap.innerHTML = "";
+
+  const realCount = testimonialData.length;
+
+  // clone last at start, clone first at end (loop ke liye)
+  const buildCard = (item) => `
+    <div class="testimonial-card">
+      <span class="testimonial-quote">&ldquo;</span>
+      <p class="testimonial-text">${item.text}</p>
+      <p class="testimonial-name">${item.name}</p>
+    </div>
+  `;
+
+  track.innerHTML =
+    buildCard(testimonialData[realCount - 1]) +
+    testimonialData.map(buildCard).join("") +
+    buildCard(testimonialData[0]);
+
+  const allCards = track.children;
+  let index = 1;
+  let autoSlide;
+  let isTransitioning = false;
+
+  for (let i = 0; i < realCount; i++) {
+    const dot = document.createElement("div");
+    dot.classList.add("testimonial-dot");
+    if (i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => {
+      goToSlide(i + 1);
+      resetAutoSlide();
+    });
+    dotsWrap.appendChild(dot);
+  }
+  const dots = dotsWrap.children;
+
+  function updateDots(realIndex){
+    [...dots].forEach(d => d.classList.remove("active"));
+    dots[realIndex].classList.add("active");
+  }
+
+  function getCardWidth(){
+    return allCards[0].getBoundingClientRect().width + 15;
+  }
+
+  function goToSlide(i, animate = true){
+    isTransitioning = animate;
+    track.style.transition = animate ? "transform 0.5s ease" : "none";
+    track.style.transform = `translateX(-${i * getCardWidth()}px)`;
+    index = i;
+
+    let realIndex = index - 1;
+    if (realIndex < 0) realIndex = realCount - 1;
+    if (realIndex >= realCount) realIndex = 0;
+    updateDots(realIndex);
+  }
+
+  function nextSlide(){
+    if (isTransitioning) return;
+    goToSlide(index + 1);
+  }
+
+  track.addEventListener("transitionend", () => {
+    isTransitioning = false;
+    if (index === allCards.length - 1) {
+      goToSlide(1, false);
+    } else if (index === 0) {
+      goToSlide(realCount, false);
+    }
+  });
+
+  function startAutoSlide(){
+    autoSlide = setInterval(nextSlide, 3500);
+  }
+  function resetAutoSlide(){
+    clearInterval(autoSlide);
+    startAutoSlide();
+  }
+
+  let startX = 0;
+  track.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+    clearInterval(autoSlide);
+  });
+  track.addEventListener("touchend", e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (diff > 50) goToSlide(index + 1);
+    if (diff < -50) goToSlide(index - 1);
+    resetAutoSlide();
+  });
+
+  window.addEventListener("resize", () => goToSlide(index, false));
+
+  goToSlide(1, false);
+  startAutoSlide();
+}
+
+document.addEventListener("DOMContentLoaded", renderTestimonials);
