@@ -31,7 +31,7 @@ function renderCabList(){
           <p class="cab-result-price">₹ ${cab.price}</p>
           <a href="#" class="cab-fare-details">Fare Details &raquo;</a>
         </div>
-        <a href="https://wa.me/918737993690?text=${encodeURIComponent('I want to book ' + cab.name + ' - Fare: Rs.' + cab.price)}" target="_blank" class="cab-select-btn">Select Cab</a>
+        <a href="#" class="cab-select-btn" data-cab-name="${cab.subtitle}" data-cab-subtitle="${cab.subtitle}" data-cab-image="${cab.image}" data-cab-price="${cab.price}">Select Cab</a>
       </div>
     `;
     container.appendChild(card);
