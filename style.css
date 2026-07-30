@@ -1358,3 +1358,10 @@ body{
   color: #000;
   cursor: pointer;
 }
+.conditional-fields{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
