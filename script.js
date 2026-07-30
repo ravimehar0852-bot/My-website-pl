@@ -39,47 +39,31 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
-
-  // Set today's date as default (Outstation)
+// Set today's date & current time as default (Outstation)
   const dateField = document.getElementById('dateInput');
-  if (dateField) {
-    const today = new Date();
-    const dd = String(today.getDate()).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0');
-    const yyyy = today.getFullYear();
-    dateField.value = `${dd}-${mm}-${yyyy}`;
-  }
-
-  // Set current time as default (Outstation)
   const timeField = document.getElementById('timeInput');
+  const now1 = new Date();
+  if (dateField) {
+    dateField.value = now1.toISOString().split('T')[0]; // YYYY-MM-DD
+  }
   if (timeField) {
-    const now = new Date();
-    let hours = now.getHours();
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const ampm = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12;
-    hours = hours ? hours : 12;
-    timeField.value = `${String(hours).padStart(2, '0')}:${minutes} ${ampm}`;
+    const hh = String(now1.getHours()).padStart(2, '0');
+    const mm = String(now1.getMinutes()).padStart(2, '0');
+    timeField.value = `${hh}:${mm}`; // 24hr HH:MM
   }
 
-  // Set today's date as default (Local)
+  // Set today's date & current time as default (Local)
   const dateFieldLocal = document.getElementById('dateInputLocal');
-  if (dateFieldLocal) {
-    const today = new Date();
-    dateFieldLocal.value = `${String(today.getDate()).padStart(2,'0')}-${String(today.getMonth()+1).padStart(2,'0')}-${today.getFullYear()}`;
-  }
-
-  // Set current time as default (Local)
   const timeFieldLocal = document.getElementById('timeInputLocal');
-  if (timeFieldLocal) {
-    const now = new Date();
-    let h = now.getHours();
-    const m = String(now.getMinutes()).padStart(2,'0');
-    const ampm = h >= 12 ? 'PM' : 'AM';
-    h = h % 12 || 12;
-    timeFieldLocal.value = `${String(h).padStart(2,'0')}:${m} ${ampm}`;
+  const now2 = new Date();
+  if (dateFieldLocal) {
+    dateFieldLocal.value = now2.toISOString().split('T')[0];
   }
-
+  if (timeFieldLocal) {
+    const hh = String(now2.getHours()).padStart(2, '0');
+    const mm = String(now2.getMinutes()).padStart(2, '0');
+    timeFieldLocal.value = `${hh}:${mm}`;
+  }
   // Search Cab button (Outstation) -> redirect to cab-results.html
   const searchBtn = document.querySelector('#outstationForm .search-btn');
   if (searchBtn) {
