@@ -20,54 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Local form ke andar Hourly Basis / Airport Transfer toggle
-  const hourlyBtn = document.getElementById('hourlyBtn');
-  const airportBtn = document.getElementById('airportBtn');
-  if (hourlyBtn && airportBtn) {
-    [hourlyBtn, airportBtn].forEach(btn => {
-      btn.addEventListener('click', () => {
-        [hourlyBtn, airportBtn].forEach(b => {
-          b.classList.remove('active');
-          b.classList.add('inactive');
-        });
-        btn.classList.remove('inactive');
-        btn.classList.add('active');
-      });
-    });
-  }
-
-  // Local form date/time default
-  const dateFieldLocal = document.getElementById('dateInputLocal');
-  const timeFieldLocal = document.getElementById('timeInputLocal');
-  if (dateFieldLocal) {
-    const today = new Date();
-    dateFieldLocal.value = `${String(today.getDate()).padStart(2,'0')}-${String(today.getMonth()+1).padStart(2,'0')}-${today.getFullYear()}`;
-  }
-  if (timeFieldLocal) {
-    const now = new Date();
-    let h = now.getHours();
-    const m = String(now.getMinutes()).padStart(2,'0');
-    const ampm = h >= 12 ? 'PM' : 'AM';
-    h = h % 12 || 12;
-    timeFieldLocal.value = `${String(h).padStart(2,'0')}:${m} ${ampm}`;
-  }
-
-  // Local search button
-  const searchCabLocal = document.getElementById('searchCabLocal');
-  if (searchCabLocal) {
-    searchCabLocal.addEventListener('click', () => {
-      const pkg = document.getElementById('localPackage').value;
-      const hrsKms = document.getElementById('hoursKms').value;
-      const mobile = document.getElementById('mobileNoLocal').value.trim();
-
-      if (!pkg) { alert('Please select a local package.'); return; }
-      if (!hrsKms) { alert('Please select hours/kms.'); return; }
-      if (!mobile || !/^\d{10}$/.test(mobile)) { alert('Please enter a valid 10-digit mobile number.'); return; }
-
-      alert(`Searching local cab: ${pkg}, ${hrsKms}...`);
-    });
-  }
-  // Toggle switching (har .toggle-row ke andar alag-alag group, isliye scoped rakha)
+  // Toggle switching (har .toggle-row ke andar alag-alag group)
   document.querySelectorAll('.toggle-row').forEach(row => {
     const btns = row.querySelectorAll('.toggle-btn');
     btns.forEach(btn => {
@@ -82,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Set today's date as default in Date field
+  // Set today's date as default (Outstation)
   const dateField = document.getElementById('dateInput');
   if (dateField) {
     const today = new Date();
@@ -92,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dateField.value = `${dd}-${mm}-${yyyy}`;
   }
 
-  // Set current time as default in Time field
+  // Set current time as default (Outstation)
   const timeField = document.getElementById('timeInput');
   if (timeField) {
     const now = new Date();
@@ -104,24 +57,60 @@ document.addEventListener('DOMContentLoaded', () => {
     timeField.value = `${String(hours).padStart(2, '0')}:${minutes} ${ampm}`;
   }
 
-  // Search Cab button click handler
-  const searchBtn = document.querySelector('.search-btn');
-  searchBtn.addEventListener('click', () => {
-    const fromCity = document.getElementById('fromCity').value.trim();
-    const toCity = document.getElementById('toCity').value.trim();
-    const mobile = document.getElementById('mobileNo').value.trim();
+  // Set today's date as default (Local)
+  const dateFieldLocal = document.getElementById('dateInputLocal');
+  if (dateFieldLocal) {
+    const today = new Date();
+    dateFieldLocal.value = `${String(today.getDate()).padStart(2,'0')}-${String(today.getMonth()+1).padStart(2,'0')}-${today.getFullYear()}`;
+  }
 
-    if (!fromCity || !toCity) {
-      alert('Please enter both From City and To City.');
-      return;
-    }
-    if (!mobile || !/^\d{10}$/.test(mobile)) {
-      alert('Please enter a valid 10-digit mobile number.');
-      return;
-    }
+  // Set current time as default (Local)
+  const timeFieldLocal = document.getElementById('timeInputLocal');
+  if (timeFieldLocal) {
+    const now = new Date();
+    let h = now.getHours();
+    const m = String(now.getMinutes()).padStart(2,'0');
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    timeFieldLocal.value = `${String(h).padStart(2,'0')}:${m} ${ampm}`;
+  }
 
-    alert(`Searching cabs from ${fromCity} to ${toCity}...`);
-  });
+  // Search Cab button (Outstation)
+  const searchBtn = document.querySelector('#outstationForm .search-btn');
+  if (searchBtn) {
+    searchBtn.addEventListener('click', () => {
+      const fromCity = document.getElementById('fromCity').value.trim();
+      const toCity = document.getElementById('toCity').value.trim();
+      const mobile = document.getElementById('mobileNo').value.trim();
+
+      if (!fromCity || !toCity) {
+        alert('Please enter both From City and To City.');
+        return;
+      }
+      if (!mobile || !/^\d{10}$/.test(mobile)) {
+        alert('Please enter a valid 10-digit mobile number.');
+        return;
+      }
+
+      alert(`Searching cabs from ${fromCity} to ${toCity}...`);
+    });
+  }
+
+  // Search Cab button (Local)
+  const searchCabLocal = document.getElementById('searchCabLocal');
+  if (searchCabLocal) {
+    searchCabLocal.addEventListener('click', () => {
+      const pkg = document.getElementById('localPackage').value;
+      const hrsKms = document.getElementById('hoursKms').value;
+      const mobile = document.getElementById('mobileNoLocal').value.trim();
+
+      if (!pkg) { alert('Please select a local package.'); return; }
+      if (!hrsKms) { alert('Please select hours/kms.'); return; }
+      if (!mobile || !/^\d{10}$/.test(mobile)) { alert('Please enter a valid 10-digit mobile number.'); return; }
+
+      alert(`Searching local cab: ${pkg}, ${hrsKms}...`);
+    });
+  }
 
 });
 document.addEventListener('DOMContentLoaded', () => {
