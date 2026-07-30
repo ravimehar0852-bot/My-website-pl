@@ -550,9 +550,11 @@ body{
   background: #fff;
 }
 .services-page-title{
+  font-family: 'Montserrat', sans-serif;
   font-size: 28px;
-  font-weight: 800;
+  font-weight: 900;
   color: #000;
+  -webkit-text-stroke: 0.3px #000;
 }
 
 .services-list{
