@@ -10,6 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
 
+      if (!outstationForm || !localForm) {
+        console.error('outstationForm ya localForm div HTML mein nahi mila. IDs check karein.');
+        return;
+      }
+
       if (idx === 0) {
         outstationForm.style.display = 'block';
         localForm.style.display = 'none';
