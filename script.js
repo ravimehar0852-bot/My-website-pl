@@ -2,13 +2,71 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Tab switching: Outstation / Local
   const tabs = document.querySelectorAll('.tab');
-  tabs.forEach(tab => {
+  const outstationForm = document.getElementById('outstationForm');
+  const localForm = document.getElementById('localForm');
+
+  tabs.forEach((tab, idx) => {
     tab.addEventListener('click', () => {
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
+
+      if (idx === 0) {
+        outstationForm.style.display = 'block';
+        localForm.style.display = 'none';
+      } else {
+        outstationForm.style.display = 'none';
+        localForm.style.display = 'block';
+      }
     });
   });
 
+  // Local form ke andar Hourly Basis / Airport Transfer toggle
+  const hourlyBtn = document.getElementById('hourlyBtn');
+  const airportBtn = document.getElementById('airportBtn');
+  if (hourlyBtn && airportBtn) {
+    [hourlyBtn, airportBtn].forEach(btn => {
+      btn.addEventListener('click', () => {
+        [hourlyBtn, airportBtn].forEach(b => {
+          b.classList.remove('active');
+          b.classList.add('inactive');
+        });
+        btn.classList.remove('inactive');
+        btn.classList.add('active');
+      });
+    });
+  }
+
+  // Local form date/time default
+  const dateFieldLocal = document.getElementById('dateInputLocal');
+  const timeFieldLocal = document.getElementById('timeInputLocal');
+  if (dateFieldLocal) {
+    const today = new Date();
+    dateFieldLocal.value = `${String(today.getDate()).padStart(2,'0')}-${String(today.getMonth()+1).padStart(2,'0')}-${today.getFullYear()}`;
+  }
+  if (timeFieldLocal) {
+    const now = new Date();
+    let h = now.getHours();
+    const m = String(now.getMinutes()).padStart(2,'0');
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    timeFieldLocal.value = `${String(h).padStart(2,'0')}:${m} ${ampm}`;
+  }
+
+  // Local search button
+  const searchCabLocal = document.getElementById('searchCabLocal');
+  if (searchCabLocal) {
+    searchCabLocal.addEventListener('click', () => {
+      const pkg = document.getElementById('localPackage').value;
+      const hrsKms = document.getElementById('hoursKms').value;
+      const mobile = document.getElementById('mobileNoLocal').value.trim();
+
+      if (!pkg) { alert('Please select a local package.'); return; }
+      if (!hrsKms) { alert('Please select hours/kms.'); return; }
+      if (!mobile || !/^\d{10}$/.test(mobile)) { alert('Please enter a valid 10-digit mobile number.'); return; }
+
+      alert(`Searching local cab: ${pkg}, ${hrsKms}...`);
+    });
+  }
   // Toggle switching: One Way / Round Trip
   const toggleBtns = document.querySelectorAll('.toggle-btn');
   toggleBtns.forEach(btn => {
