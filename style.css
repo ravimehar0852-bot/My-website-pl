@@ -812,20 +812,22 @@ body{
   font-weight: 800;
   margin-bottom: 25px;
 }
-
 .footer-routes-grid{
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0 30px;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
   max-width: 900px;
   margin: 0 auto;
 }
 
-.footer-routes-col{
-  display: flex;
-  flex-direction: column;
+.footer-routes-col a{
+  color: #ddd;
+  text-decoration: none;
+  font-size: 12px;
+  padding: 5px 0;
+  display: block;
+  line-height: 1.4;
 }
-
 .footer-routes-col a{
   color: #ddd;
   text-decoration: none;
