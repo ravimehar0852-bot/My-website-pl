@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout - SS Taxy</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">
+      <svg viewBox="0 0 100 60" fill="none">
+        <path d="M5 45 Q5 30 20 28 Q28 10 50 10 Q72 10 80 28 Q95 30 95 45 L95 50 L5 50 Z" fill="#000"/>
+        <rect x="0" y="45" width="100" height="8" fill="#f4b400"/>
+        <path d="M25 30 Q35 18 50 18 Q65 18 75 30 Z" fill="#f4b400"/>
+        <circle cx="20" cy="52" r="6" fill="#fff" stroke="#000" stroke-width="2"/>
+        <circle cx="80" cy="52" r="6" fill="#fff" stroke="#000" stroke-width="2"/>
+      </svg>
+      <div class="logo-text">
+        <span class="SS">SS</span> <span class="Taxy">Taxy</span>
+      </div>
+    </div>
+    <button class="phone-btn">+91-8737993690</button>
+    <button class="menu-icon" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <section class="cab-results-section" style="background:#fff; min-height:100vh;">
+
+    <div class="booking-summary-box">
+      <a href="javascript:history.back()" class="summary-back-btn">Back</a>
+
+      <p class="summary-label"><i class="fa-solid fa-location-dot"></i> Booking Type</p>
+      <p class="summary-value-small" id="summaryBookingType">--</p>
+
+      <p class="summary-label"><i class="fa-solid fa-calendar-days"></i> Pick-up Date &amp; Time</p>
+      <p class="summary-value-small" id="summaryDateTime">--</p>
+
+      <p class="summary-label"><i class="fa-solid fa-clock"></i> Duration</p>
+      <p class="summary-value-small" id="summaryDuration">--</p>
+
+      <p class="summary-label"><i class="fa-solid fa-compass"></i> Trip Type</p>
+      <p class="summary-value-small" id="summaryTripType">--</p>
+    </div>
+
+    <p class="summary-route" id="summaryRoute">Route: --</p>
+
+    <!-- GUEST DETAILS -->
+    <div class="guest-details-box">
+      <div class="guest-details-header">Guest Details</div>
+
+      <div class="guest-form">
+        <label>Guest Name</label>
+        <div class="guest-field">
+          <i class="fa-solid fa-user"></i>
+          <input type="text" id="guestName" placeholder="Enter Guest Name">
+        </div>
+
+        <label>Email Address</label>
+        <div class="guest-field">
+          <i class="fa-solid fa-envelope"></i>
+          <input type="email" id="guestEmail" placeholder="Enter Email">
+        </div>
+
+        <label>Mobile No</label>
+        <div class="guest-field">
+          <i class="fa-solid fa-phone"></i>
+          <input type="tel" id="guestMobile" placeholder="Enter Mobile Number">
+        </div>
+
+        <label>Alternate Mobile Number</label>
+        <div class="guest-field">
+          <i class="fa-solid fa-phone"></i>
+          <input type="tel" id="guestAltMobile" placeholder="Enter Alternate Mobile Number">
+        </div>
+
+        <label>Pickup From</label>
+        <div class="guest-field">
+          <i class="fa-solid fa-location-dot"></i>
+          <input type="text" id="guestPickup" placeholder="Pickup Location">
+        </div>
+
+        <label>Drop To</label>
+        <div class="guest-field">
+          <i class="fa-solid fa-location-dot"></i>
+          <input type="text" id="guestDrop" placeholder="Drop Location">
+        </div>
+
+        <label>Number of Passengers</label>
+        <div class="guest-field">
+          <i class="fa-solid fa-location-dot"></i>
+          <select id="guestPassengers">
+            <option value="">Number of Passengers</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5+">5+</option>
+          </select>
+        </div>
+
+        <label>Pickup Date &amp; Time</label>
+        <div class="guest-datetime-row">
+          <div class="guest-field">
+            <i class="fa-solid fa-calendar-days"></i>
+            <input type="date" id="guestDate">
+          </div>
+          <div class="guest-field">
+            <i class="fa-solid fa-clock"></i>
+            <input type="time" id="guestTime">
+          </div>
+        </div>
+
+        <label class="checkbox-label">
+          <input type="checkbox" id="guestGST"> GST
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="guestFlight"> Flight Number
+        </label>
+      </div>
+    </div>
+
+    <!-- FARE SUMMARY -->
+    <div class="fare-summary-box">
+      <div class="fare-summary-header">Overall Fare Summary</div>
+
+      <div class="fare-summary-body">
+        <div class="fare-cab-info">
+          <img id="fareCabImg" src="" alt="Cab" class="fare-cab-img">
+          <div>
+            <h3 class="fare-cab-title" id="fareCabTitle">--</h3>
+            <div class="fare-stars">★★★★★</div>
+            <p class="fare-cab-subtitle" id="fareCabSubtitle">--</p>
+            <p class="fare-cab-similar" id="fareCabSimilar">--</p>
+          </div>
+        </div>
+
+        <p class="coupon-label">Coupon for Discount</p>
+        <div class="coupon-row">
+          <input type="text" id="couponCode" placeholder="Enter Coupon Code">
+          <button id="checkCouponBtn">Check Coupon</button>
+        </div>
+
+        <div class="fare-line">
+          <span>Total Trip Fare</span>
+          <span id="totalTripFare">₹ 0</span>
+        </div>
+        <div class="fare-line">
+          <span>GST Charges@ 5.00%</span>
+          <span id="gstCharges">₹ 0</span>
+        </div>
+        <div class="fare-line highlight">
+          <span>Payment Due</span>
+          <span id="paymentDue">₹ 0</span>
+        </div>
+        <div class="fare-line highlight">
+          <span>Coupon Discount</span>
+          <span id="couponDiscount">₹ 0</span>
+        </div>
+        <div class="fare-line bold">
+          <span>Advance Payable Amount</span>
+          <span id="advanceAmount">₹ 0</span>
+        </div>
+        <p class="fare-note">(incl. of all taxes)</p>
+
+        <select class="advance-payment-select">
+          <option>Advance Payment</option>
+        </select>
+
+        <button class="pay-now-btn" id="payNowBtn">PAY NOW</button>
+      </div>
+    </div>
+
+  </section>
+
+<div class="bottom-bar">
+  <a href="tel:+918737993690" class="bottom-call-btn">
+    <i class="fa-solid fa-phone"></i> 8737993690
+  </a>
+  <a href="https://wa.me/918737993690" target="_blank" class="bottom-whatsapp-btn">
+    <i class="fa-brands fa-whatsapp"></i> Get Taxi Fare
+  </a>
+</div>
+
+<script src="checkout.js"></script>
+</body>
+</html>
