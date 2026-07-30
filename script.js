@@ -117,16 +117,22 @@ document.addEventListener('DOMContentLoaded', () => {
       const pkg = document.getElementById('localPackage').value;
       const hrsKms = document.getElementById('hoursKms').value;
       const mobile = document.getElementById('mobileNoLocal').value.trim();
+      const date = document.getElementById('dateInputLocal').value;
+      const time = document.getElementById('timeInputLocal').value;
 
       if (!pkg) { alert('Please select a local package.'); return; }
       if (!hrsKms) { alert('Please select hours/kms.'); return; }
       if (!mobile || !/^\d{10}$/.test(mobile)) { alert('Please enter a valid 10-digit mobile number.'); return; }
 
-      alert(`Searching local cab: ${pkg}, ${hrsKms}...`);
+      showCabResults({
+        bookingType: pkg === 'hourly' ? 'Hourly Basis' : 'Airport Transfer',
+        dateTime: `${date} ${time}`,
+        tripType: 'Local',
+        from: 'Lucknow',
+        to: hrsKms
+      });
     });
   }
-
-});
 document.addEventListener('DOMContentLoaded', () => {
   const track = document.getElementById('taxiTrack');
   const dotsWrap = document.getElementById('taxiDots');
