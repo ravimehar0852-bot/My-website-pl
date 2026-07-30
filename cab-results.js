@@ -54,3 +54,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderCabList();
 });
+let selectedCab = null;
+
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('cab-select-btn')) {
+      selectedCab = {
+        name: e.target.dataset.cabName || '',
+        subtitle: e.target.dataset.cabSubtitle || '',
+        image: e.target.dataset.cabImage || '',
+        price: e.target.dataset.cabPrice || 0
+      };
+    }
+  });
+
+  submitBtn.addEventListener('click', () => {
+    const mobile = document.getElementById('modalMobileInput').value.trim();
+    if (!mobile || !/^\d{10}$/.test(mobile)) {
+      alert('Please enter a valid 10-digit mobile number.');
+      return;
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const checkoutParams = new URLSearchParams({
+      bookingType: urlParams.get('bookingType') || '',
+      dateTime: urlParams.get('dateTime') || '',
+      tripType: urlParams.get('tripType') || '',
+      from: urlParams.get('from') || '',
+      to: urlParams.get('to') || '',
+      mobile: mobile,
+      cabName: selectedCab ? selectedCab.name : '',
+      cabSubtitle: selectedCab ? selectedCab.subtitle : '',
+      cabImage: selectedCab ? selectedCab.image : '',
+      cabPrice: selectedCab ? selectedCab.price : 0
+    });
+
+    window.location.href = 'checkout.html?' + checkoutParams.toString();
+  });
