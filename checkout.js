@@ -54,3 +54,33 @@ document.addEventListener('DOMContentLoaded', () => {
     alert('Payment gateway abhi integrate nahi hui — ye agla step hoga.');
   });
 });
+// GST checkbox toggle
+  const guestGST = document.getElementById('guestGST');
+  const gstFields = document.getElementById('gstFields');
+  if (guestGST && gstFields) {
+    guestGST.addEventListener('change', () => {
+      gstFields.style.display = guestGST.checked ? 'block' : 'none';
+    });
+  }
+
+  // Flight Number checkbox toggle
+  const guestFlight = document.getElementById('guestFlight');
+  const flightFields = document.getElementById('flightFields');
+  if (guestFlight && flightFields) {
+    guestFlight.addEventListener('change', () => {
+      flightFields.style.display = guestFlight.checked ? 'block' : 'none';
+    });
+  }
+const paymentTypeSelect = document.getElementById('paymentTypeSelect');
+  if (paymentTypeSelect) {
+    paymentTypeSelect.addEventListener('change', () => {
+      const type = paymentTypeSelect.value;
+      if (type === 'advance') {
+        document.getElementById('advanceAmount').textContent = `₹ ${advanceAmount}.00`;
+      } else if (type === 'full') {
+        document.getElementById('advanceAmount').textContent = `₹ ${cabPrice}`;
+      } else if (type === 'driver') {
+        document.getElementById('advanceAmount').textContent = `₹ 0`;
+      }
+    });
+  }
