@@ -278,3 +278,55 @@ function observeCards(){
 }
 
 document.addEventListener("DOMContentLoaded", renderRoutes);
+const servicesData = [
+  {
+    image: "images/one-way-service.jpg",
+    title: "One Way Taxi Service Hire with KTS Cabs",
+    price: "₹20.00/ KM",
+    phone: "918737993690"
+  },
+  {
+    image: "images/round-trip-service.jpg",
+    title: "Round Trip Taxi Service Hire with KTS Cabs",
+    price: "₹15.00/ KM",
+    phone: "918737993690"
+  },
+  {
+    image: "images/local-service.jpg",
+    title: "Local Taxi Service Hire with KTS Cabs",
+    price: "₹15.00/ KM",
+    phone: "918737993690"
+  },
+  {
+    image: "images/airport-service.jpg",
+    title: "Airport Taxi Service Hire with KTS Cabs",
+    price: "₹20.00/ KM",
+    phone: "918737993690"
+  }
+];
+
+function renderServices(){
+  const list = document.getElementById("servicesList");
+  if(!list) return;
+  list.innerHTML = "";
+
+  servicesData.forEach(service => {
+    const card = document.createElement("div");
+    card.className = "service-card";
+
+    card.innerHTML = `
+      <img class="service-img" src="${service.image}" alt="${service.title}">
+      <div class="service-bottom">
+        <h3 class="service-title">${service.title}</h3>
+        <div class="service-meta">
+          <span class="service-price">${service.price}</span>
+          <a class="service-call-btn" href="tel:+${service.phone}">Call Now</a>
+        </div>
+      </div>
+    `;
+
+    list.appendChild(card);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", renderServices);
