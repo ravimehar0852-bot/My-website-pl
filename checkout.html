@@ -118,11 +118,26 @@
         <label class="checkbox-label">
           <input type="checkbox" id="guestGST"> GST
         </label>
+        <div class="conditional-fields" id="gstFields" style="display:none;">
+          <div class="guest-field">
+            <i class="fa-solid fa-file"></i>
+            <input type="text" id="gstCompanyName" placeholder="Enter Compney Name">
+          </div>
+          <div class="guest-field">
+            <i class="fa-solid fa-file"></i>
+            <input type="text" id="gstNumber" placeholder="Enter GST No">
+          </div>
+        </div>
+
         <label class="checkbox-label">
           <input type="checkbox" id="guestFlight"> Flight Number
         </label>
-      </div>
-    </div>
+        <div class="conditional-fields" id="flightFields" style="display:none;">
+          <div class="guest-field">
+            <i class="fa-solid fa-plane"></i>
+            <input type="text" id="flightTicketNo" placeholder="Enter Ticket No">
+          </div>
+        </div>
 
     <!-- FARE SUMMARY -->
     <div class="fare-summary-box">
@@ -167,8 +182,10 @@
         </div>
         <p class="fare-note">(incl. of all taxes)</p>
 
-        <select class="advance-payment-select">
-          <option>Advance Payment</option>
+        <select class="advance-payment-select" id="paymentTypeSelect">
+          <option value="advance">Advance Payment</option>
+          <option value="full">Full Payment</option>
+          <option value="driver">Pay to Driver</option>
         </select>
 
         <button class="pay-now-btn" id="payNowBtn">PAY NOW</button>
