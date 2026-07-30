@@ -330,3 +330,75 @@ function renderServices(){
 }
 
 document.addEventListener("DOMContentLoaded", renderServices);
+const faqData = [
+  {
+    q: "Is KTS Cabs available for city tours or special events in Lucknow?",
+    a: "Yes, KTS Cabs is available for city tours and special events in Lucknow. Whether you want to explore the city's attractions or need transportation for a special occasion, we are here to make your experience memorable."
+  },
+  {
+    q: "Is it possible to make a reservation for a KTS Cab in advance?",
+    a: "Certainly! We understand the importance of planning ahead. You can make an advance booking through our app, website, or by calling our hotline. This ensures that a KTS Cab is ready for you when you need it."
+  },
+  {
+    q: "Can I book a KTS Cab for airport transfers?",
+    a: "Yes, you can! KTS Cabs offers reliable airport transfer services. Whether you're heading to or from the airport, our punctual and courteous drivers will ensure you reach your destination on time."
+  },
+  {
+    q: "Are the drivers at KTS Cabs experienced and licensed?",
+    a: "Absolutely! The drivers at KTS Cabs are not only experienced but also licensed professionals. We prioritize safety and professionalism, ensuring a secure and pleasant journey for our passengers."
+  },
+  {
+    q: "What types of vehicles does KTS Cabs offer?",
+    a: "KTS Cabs provides a diverse fleet of vehicles to meet your travel needs. Our options include comfortable sedans, spacious SUVs, and more. Whether you're traveling solo or with a group, we have the right vehicle for you."
+  },
+  {
+    q: "How can I book a taxi with KTS Cabs in Lucknow?",
+    a: "Booking a taxi with KTS Cabs is easy! You can use our user-friendly mobile app, visit our website, or call our dedicated hotline. Choose the method that suits you best, provide your travel details, and we'll take care of the rest."
+  }
+];
+
+function renderFAQ(){
+  const list = document.getElementById("faqList");
+  if(!list) return;
+  list.innerHTML = "";
+
+  faqData.forEach((item, i) => {
+    const faqItem = document.createElement("div");
+    faqItem.className = "faq-item";
+
+    faqItem.innerHTML = `
+      <div class="faq-question">
+        <span>${i + 1}. ${item.q}</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>${item.a}</p>
+      </div>
+    `;
+
+    list.appendChild(faqItem);
+  });
+
+  // Accordion click behavior
+  const questions = document.querySelectorAll(".faq-question");
+  questions.forEach(question => {
+    question.addEventListener("click", () => {
+      const currentItem = question.parentElement;
+      const isOpen = currentItem.classList.contains("open");
+
+      // sabhi close karo
+      document.querySelectorAll(".faq-item").forEach(item => {
+        item.classList.remove("open");
+        item.querySelector(".faq-icon").textContent = "+";
+      });
+
+      // agar pehle se open nahi tha, toh isse open karo
+      if (!isOpen) {
+        currentItem.classList.add("open");
+        currentItem.querySelector(".faq-icon").textContent = "−";
+      }
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", renderFAQ);
