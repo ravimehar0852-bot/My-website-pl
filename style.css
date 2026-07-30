@@ -3,8 +3,8 @@ body{
     padding:0;
     background-color: #f4b400;  
     font-family:'Montserrat',sans-serif;
+    overflow-x: hidden;
 }
-
 .container{
     width:100%;
     max-width:none;
