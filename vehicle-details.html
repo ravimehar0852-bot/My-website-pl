@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vehicle Details - SS Taxy</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">
+      <svg viewBox="0 0 100 60" fill="none">
+        <path d="M5 45 Q5 30 20 28 Q28 10 50 10 Q72 10 80 28 Q95 30 95 45 L95 50 L5 50 Z" fill="#000"/>
+        <rect x="0" y="45" width="100" height="8" fill="#f4b400"/>
+        <path d="M25 30 Q35 18 50 18 Q65 18 75 30 Z" fill="#f4b400"/>
+        <circle cx="20" cy="52" r="6" fill="#fff" stroke="#000" stroke-width="2"/>
+        <circle cx="80" cy="52" r="6" fill="#fff" stroke="#000" stroke-width="2"/>
+      </svg>
+      <div class="logo-text">
+        <span class="SS">SS</span> <span class="Taxy">Taxy</span>
+      </div>
+    </div>
+    <button class="phone-btn">+91-8737993690</button>
+    <button class="menu-icon" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <section class="vehicle-details-page">
+
+    <!-- 1. INTRO PARAGRAPH -->
+    <p class="vd-intro" id="vdIntro">--</p>
+
+    <!-- 2. VEHICLE DETAIL CARD -->
+    <h1 class="vd-title" id="vdTitle">--</h1>
+
+    <img id="vdImage" src="" alt="Vehicle" class="vd-image">
+
+    <ul class="vd-specs">
+      <li><strong>Vehicle Name :</strong> <span id="vdVehicleName">--</span></li>
+      <li><strong>No of Person :</strong> <span id="vdPersons">--</span></li>
+      <li><strong>Price :</strong> ₹ <span id="vdPrice">--</span>/Km</li>
+    </ul>
+
+    <!-- 3. WHY CHOOSE -->
+    <h2 class="vd-why-heading">Why Choose <span id="vdWhyName">this vehicle</span> with KTS Cabs?</h2>
+    <ol class="vd-why-list">
+      <li><strong>Spacious Comfort:</strong> Our vehicles provide ample space for passengers, ensuring a comfortable and relaxed journey. Whether you're traveling with family or friends, our taxis offer the room you need to make your trip enjoyable.</li>
+      <li><strong>Stylish and Modern Fleet:</strong> KTS Cabs takes pride in maintaining a fleet of well-maintained and stylish vehicles, known for contemporary design, ensuring you travel in style while exploring the enchanting streets of Lucknow.</li>
+      <li><strong>Professional Chauffeurs:</strong> Our experienced and courteous chauffeurs are dedicated to providing a safe and pleasant journey. Well-versed with local routes and attractions, they serve as your local guides, enhancing your overall travel experience.</li>
+      <li><strong>Affordable Pricing:</strong> KTS Cabs believes in offering value for money. Enjoy competitive and transparent pricing, ensuring that your exploration remains budget-friendly.</li>
+      <li><strong>Convenient Booking:</strong> Booking your taxi with KTS Cabs is a breeze. Visit our website or give us a call to reserve your taxi effortlessly. Whether you're planning a sightseeing tour, airport transfer, or any other travel need, we've got you covered.</li>
+    </ol>
+
+    <!-- 4. HOW TO BOOK -->
+    <p class="vd-how-to-book">
+      <strong>How to Book:</strong> Contact us for <span id="vdHowName">this vehicle</span> hire in Lucknow:
+    </p>
+    <ul class="vd-contact-list">
+      <li>Email: <a href="mailto:booking@ktscabs.com">booking@ktscabs.com</a></li>
+      <li>Call us: <a href="tel:+918737993690">+91-8737993690</a></li>
+    </ul>
+    <p class="vd-closing-text">
+      Unleash the charm of Lucknow with KTS Cabs and our <span id="vdClosingName">vehicle</span> hire service. Experience the perfect blend of comfort, style, and affordability as you traverse the city's iconic landmarks. Book your taxi today and let us make your journey truly unforgettable.
+    </p>
+
+    <img id="vdImage2" src="" alt="Vehicle" class="vd-image">
+
+    <a href="#getInTouchForm" class="vd-getintouch-btn">Get in touch</a>
+
+    <!-- 5. CONTACT FORM (bottom) -->
+    <div class="vd-contact-form-box" id="getInTouchForm">
+      <h2 class="vd-form-heading">Get in touch</h2>
+
+      <input type="text" id="vdName" placeholder="Enter Your Name">
+      <input type="tel" id="vdPhone" placeholder="Enter Your Phone">
+      <textarea id="vdMessage" placeholder="Your messages" rows="6"></textarea>
+
+      <button class="vd-send-btn" id="vdSendBtn">SEND NOW</button>
+
+      <p class="vd-form-phone"><i class="fa-solid fa-phone"></i> +91-8737993690</p>
+    </div>
+
+  </section>
+
+<div class="bottom-bar">
+  <a href="tel:+918737993690" class="bottom-call-btn">
+    <i class="fa-solid fa-phone"></i> 8737993690
+  </a>
+  <a href="https://wa.me/918737993690" target="_blank" class="bottom-whatsapp-btn">
+    <i class="fa-brands fa-whatsapp"></i> Get Taxi Fare
+  </a>
+</div>
+
+<script src="vehicle-details.js"></script>
+</body>
+  </html>
+
