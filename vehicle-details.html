@@ -28,7 +28,8 @@
       <span></span><span></span><span></span>
     </button>
   </div>
-<!-- SIDE MENU -->
+
+  <!-- SIDE MENU -->
   <div class="side-menu-overlay" id="sideMenuOverlay"></div>
   <div class="side-menu" id="sideMenu">
     <button class="side-menu-close" id="sideMenuClose">&times;</button>
@@ -52,108 +53,104 @@
 
     <a href="tel:+918737993690" class="side-menu-phone-btn">+91-8737993690</a>
   </div>
+
   <div class="container">
-<!-- Tabs -->
-  <div class="tabs">
-    <button class="tab active">
-      <svg viewBox="0 0 24 24" fill="#fff"><path d="M4 21V3h8v4h8v14h-6v-4h-4v4H4zm2-2h2v-2H6v2zm0-4h2v-2H6v2zm0-4h2V9H6v2zm0-4h2V5H6v2zm4 12h2v-2h-2v2zm0-4h2v-2h-2v2zm0-4h2V9h-2v2zm6 8h2v-2h-2v2zm0-4h2v-2h-2v2z"/></svg>
-      Outstation
-    </button>
-    <button class="tab">
-      <svg viewBox="0 0 24 24" fill="#fff"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
-      Local
-    </button>
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active">
+        <svg viewBox="0 0 24 24" fill="#fff"><path d="M4 21V3h8v4h8v14h-6v-4h-4v4H4zm2-2h2v-2H6v2zm0-4h2v-2H6v2zm0-4h2V9H6v2zm0-4h2V5H6v2zm4 12h2v-2h-2v2zm0-4h2v-2h-2v2zm0-4h2V9h-2v2zm6 8h2v-2h-2v2zm0-4h2v-2h-2v2z"/></svg>
+        Outstation
+      </button>
+      <button class="tab">
+        <svg viewBox="0 0 24 24" fill="#fff"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+        Local
+      </button>
+    </div>
+
+    <!-- OUTSTATION FORM -->
+    <div id="outstationForm">
+      <div class="toggle-row">
+        <button class="toggle-btn active">One Way</button>
+        <button class="toggle-btn inactive">Round Trip</button>
+      </div>
+
+      <div class="form">
+        <div class="field">
+          <svg viewBox="0 0 24 24" fill="#1a56db"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          <input type="text" id="fromCity" placeholder="From City">
+        </div>
+        <div class="field">
+          <svg viewBox="0 0 24 24" fill="#1a56db"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          <input type="text" id="toCity" placeholder="To City">
+        </div>
+        <div class="field">
+          <svg viewBox="0 0 24 24" fill="#1a56db"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 11h5v5H7z"/></svg>
+          <input type="date" id="dateInput">
+        </div>
+        <div class="field">
+          <svg viewBox="0 0 24 24" fill="#1a56db"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+          <input type="time" id="timeInput">
+        </div>
+        <div class="field">
+          <svg viewBox="0 0 24 24" fill="#1a56db"><path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14z"/></svg>
+          <input type="tel" id="mobileNo" placeholder="Mobile No">
+        </div>
+      </div>
+
+      <div class="search-btn-wrap">
+        <button class="search-btn">Search Cab</button>
+      </div>
+    </div>
+
+    <!-- LOCAL FORM -->
+    <div id="localForm" style="display:none;">
+      <div class="toggle-row">
+        <button class="toggle-btn active" id="hourlyBtn">Hourly Basis</button>
+        <button class="toggle-btn inactive" id="airportBtn">Airport Transfer</button>
+      </div>
+
+      <div class="form">
+        <div class="field select-field">
+          <svg viewBox="0 0 24 24" fill="#1a56db"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          <select id="localPackage">
+            <option value="">-- Select Local Package --</option>
+            <option value="hourly">Hourly Basis</option>
+            <option value="airport">Airport Transfer</option>
+          </select>
+        </div>
+
+        <div class="field select-field">
+          <svg viewBox="0 0 24 24" fill="#1a56db"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          <select id="hoursKms">
+            <option value="">Select Hours/Kms</option>
+            <option value="4-40">4 Hrs / 40 Kms</option>
+            <option value="8-80">8 Hrs / 80 Kms</option>
+            <option value="12-120">12 Hrs / 120 Kms</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <svg viewBox="0 0 24 24" fill="#1a56db"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 11h5v5H7z"/></svg>
+          <input type="date" id="dateInputLocal">
+        </div>
+        <div class="field">
+          <svg viewBox="0 0 24 24" fill="#1a56db"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+          <input type="time" id="timeInputLocal">
+        </div>
+        <div class="field">
+          <svg viewBox="0 0 24 24" fill="#1a56db"><path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14z"/></svg>
+          <input type="tel" id="mobileNoLocal" placeholder="Mobile No">
+        </div>
+      </div>
+
+      <div class="search-btn-wrap">
+        <button class="search-btn" id="searchCabLocal">Search Cab</button>
+      </div>
+    </div>
+
   </div>
 
-  <!-- OUTSTATION FORM -->
-  <div id="outstationForm">
-    <div class="toggle-row">
-      <button class="toggle-btn active">One Way</button>
-      <button class="toggle-btn inactive">Round Trip</button>
-    </div>
-
-    <div class="form">
-      <div class="field">
-        <svg viewBox="0 0 24 24" fill="#1a56db"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-        <input type="text" id="fromCity" placeholder="From City">
-      </div>
-      <div class="field">
-        <svg viewBox="0 0 24 24" fill="#1a56db"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-        <input type="text" id="toCity" placeholder="To City">
-      </div>
-      <div class="field">
-        <svg viewBox="0 0 24 24" fill="#1a56db"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 11h5v5H7z"/></svg>
-        <input type="date" id="dateInput">
-      </div>
-      <div class="field">
-        <svg viewBox="0 0 24 24" fill="#1a56db"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-        <input type="time" id="timeInput">
-      </div>
-      <div class="field">
-        <svg viewBox="0 0 24 24" fill="#1a56db"><path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14z"/></svg>
-        <input type="tel" id="mobileNo" placeholder="Mobile No">
-      </div>
-    </div>
-
-    <div class="search-btn-wrap">
-      <button class="search-btn">Search Cab</button>
-    </div>
-  </div>
-
-  <!-- LOCAL FORM -->
-  <div id="localForm" style="display:none;">
-    <div class="toggle-row">
-      <button class="toggle-btn active" id="hourlyBtn">Hourly Basis</button>
-      <button class="toggle-btn inactive" id="airportBtn">Airport Transfer</button>
-    </div>
-
-    <div class="form">
-      <div class="field select-field">
-        <svg viewBox="0 0 24 24" fill="#1a56db"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-        <select id="localPackage">
-          <option value="">-- Select Local Package --</option>
-          <option value="hourly">Hourly Basis</option>
-          <option value="airport">Airport Transfer</option>
-        </select>
-      </div>
-
-      <div class="field select-field">
-        <svg viewBox="0 0 24 24" fill="#1a56db"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-        <select id="hoursKms">
-          <option value="">Select Hours/Kms</option>
-          <option value="4-40">4 Hrs / 40 Kms</option>
-          <option value="8-80">8 Hrs / 80 Kms</option>
-          <option value="12-120">12 Hrs / 120 Kms</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <svg viewBox="0 0 24 24" fill="#1a56db"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 11h5v5H7z"/></svg>
-        <input type="date" id="dateInputLocal">
-      </div>
-      <div class="field">
-        <svg viewBox="0 0 24 24" fill="#1a56db"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-        <input type="time" id="timeInputLocal">
-      </div>
-      <div class="field">
-        <svg viewBox="0 0 24 24" fill="#1a56db"><path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14z"/></svg>
-        <input type="tel" id="mobileNoLocal" placeholder="Mobile No">
-      </div>
-    </div>
-
-    <div class="search-btn-wrap">
-      <button class="search-btn" id="searchCabLocal">Search Cab</button>
-    </div>
-  </div>
-    <div class="search-btn-wrap">
-      <button class="search-btn" id="searchCabLocal">Search Cab</button>
-    </div>
-  </div>
-
-</div>
-
-<section class="vehicle-details-page" style="background:#fff; min-height:100vh;">
-<section class="vehicle-details-page">
+  <section class="vehicle-details-page" style="background:#fff; min-height:100vh;">
 
     <!-- 1. VEHICLE DETAIL CARD -->
     <h1 class="vd-title" id="vdTitle">--</h1>
@@ -168,8 +165,6 @@
 
     <!-- 2. INTRO PARAGRAPH -->
     <p class="vd-intro" id="vdIntro">--</p>
-
-    <!-- 3. WHY CHOOSE -->
 
     <!-- 3. WHY CHOOSE -->
     <h2 class="vd-why-heading">Why Choose <span id="vdWhyName">this vehicle</span> with KTS Cabs?</h2>
@@ -211,59 +206,61 @@
     </div>
 
   </section>
-<section class="taxi-section">
-  <h2 class="taxi-heading">Our Taxi For Hire</h2>
 
-  <div class="taxi-slider">
-    <div class="taxi-track" id="taxiTrack">
+  <section class="taxi-section">
+    <h2 class="taxi-heading">Our Taxi For Hire</h2>
 
-      <!-- CLONE of last card (Innova) -->
-      <div class="taxi-card clone">
-        <span class="taxi-badge">INNOVA CRYSTA</span>
-        <img src="images/innova.png" alt="Innova Crysta" class="taxi-img">
-        <h3 class="taxi-title">INNOVA CRYSTA (6+1)</h3>
-        <p class="taxi-price">₹18.00/ KM</p>
-        <a href="vehicle-details.html?name=Innova+Crysta&image=images/innova.png&persons=7&price=18.00" class="taxi-btn">Book Now</a>
+    <div class="taxi-slider">
+      <div class="taxi-track" id="taxiTrack">
+
+        <!-- CLONE of last card (Innova) -->
+        <div class="taxi-card clone">
+          <span class="taxi-badge">INNOVA CRYSTA</span>
+          <img src="images/innova.png" alt="Innova Crysta" class="taxi-img">
+          <h3 class="taxi-title">INNOVA CRYSTA (6+1)</h3>
+          <p class="taxi-price">₹18.00/ KM</p>
+          <a href="vehicle-details.html?name=Innova+Crysta&image=images/innova.png&persons=7&price=18.00" class="taxi-btn">Book Now</a>
+        </div>
+
+        <!-- Original cards -->
+        <div class="taxi-card">
+          <span class="taxi-badge">Dzire or similar</span>
+          <img src="images/dzire.png" alt="Dzire or similar" class="taxi-img">
+          <h3 class="taxi-title">Dzire or similar (4+1)</h3>
+          <p class="taxi-price">₹12.00/ KM</p>
+          <a href="vehicle-details.html?name=Dzire+or+similar&image=images/dzire.png&persons=5&price=12.00" class="taxi-btn">Book Now</a>
+        </div>
+
+        <div class="taxi-card">
+          <span class="taxi-badge">MARUTI SUZUKI ERTIGA</span>
+          <img src="images/ertiga.png" alt="Maruti Suzuki Ertiga" class="taxi-img">
+          <h3 class="taxi-title">MARUTI SUZUKI ERTIGA (6+1)</h3>
+          <p class="taxi-price">₹14.00/ KM</p>
+          <a href="vehicle-details.html?name=Maruti+Suzuki+Ertiga&image=images/ertiga.png&persons=7&price=14.00" class="taxi-btn">Book Now</a>
+        </div>
+
+        <div class="taxi-card">
+          <span class="taxi-badge">INNOVA CRYSTA</span>
+          <img src="images/innova.png" alt="Innova Crysta" class="taxi-img">
+          <h3 class="taxi-title">INNOVA CRYSTA (6+1)</h3>
+          <p class="taxi-price">₹18.00/ KM</p>
+          <a href="vehicle-details.html?name=Innova+Crysta&image=images/innova.png&persons=7&price=18.00" class="taxi-btn">Book Now</a>
+        </div>
+
+        <!-- CLONE of first card (Dzire) -->
+        <div class="taxi-card clone">
+          <span class="taxi-badge">Dzire or similar</span>
+          <img src="images/dzire.png" alt="Dzire or similar" class="taxi-img">
+          <h3 class="taxi-title">Dzire or similar (4+1)</h3>
+          <p class="taxi-price">₹12.00/ KM</p>
+          <a href="vehicle-details.html?name=Dzire+or+similar&image=images/dzire.png&persons=5&price=12.00" class="taxi-btn">Book Now</a>
+        </div>
+
       </div>
-
-      <!-- Original cards -->
-      <div class="taxi-card">
-        <span class="taxi-badge">Dzire or similar</span>
-        <img src="images/dzire.png" alt="Dzire or similar" class="taxi-img">
-        <h3 class="taxi-title">Dzire or similar (4+1)</h3>
-        <p class="taxi-price">₹12.00/ KM</p>
-        <a href="vehicle-details.html?name=Dzire+or+similar&image=images/dzire.png&persons=5&price=12.00" class="taxi-btn">Book Now</a>
-      </div>
-
-      <div class="taxi-card">
-        <span class="taxi-badge">MARUTI SUZUKI ERTIGA</span>
-        <img src="images/ertiga.png" alt="Maruti Suzuki Ertiga" class="taxi-img">
-        <h3 class="taxi-title">MARUTI SUZUKI ERTIGA (6+1)</h3>
-        <p class="taxi-price">₹14.00/ KM</p>
-        <a href="vehicle-details.html?name=Maruti+Suzuki+Ertiga&image=images/ertiga.png&persons=7&price=14.00" class="taxi-btn">Book Now</a>
-      </div>
-
-      <div class="taxi-card">
-        <span class="taxi-badge">INNOVA CRYSTA</span>
-        <img src="images/innova.png" alt="Innova Crysta" class="taxi-img">
-        <h3 class="taxi-title">INNOVA CRYSTA (6+1)</h3>
-        <p class="taxi-price">₹18.00/ KM</p>
-        <a href="vehicle-details.html?name=Innova+Crysta&image=images/innova.png&persons=7&price=18.00" class="taxi-btn">Book Now</a>
-      </div>
-
-      <!-- CLONE of first card (Dzire) -->
-      <div class="taxi-card clone">
-        <span class="taxi-badge">Dzire or similar</span>
-        <img src="images/dzire.png" alt="Dzire or similar" class="taxi-img">
-        <h3 class="taxi-title">Dzire or similar (4+1)</h3>
-        <p class="taxi-price">₹12.00/ KM</p>
-        <a href="vehicle-details.html?name=Dzire+or+similar&image=images/dzire.png&persons=5&price=12.00" class="taxi-btn">Book Now</a>
-      </div>
-
+      <div class="taxi-dots" id="taxiDots"></div>
     </div>
-    <div class="taxi-dots" id="taxiDots"></div>
-  </div>
-</section>
+  </section>
+
 <div class="bottom-bar">
   <a href="tel:+918737993690" class="bottom-call-btn">
     <i class="fa-solid fa-phone"></i> 8737993690
@@ -277,4 +274,4 @@
 <script src="vehicle-details.js"></script>
 </body>
   </html>
-
+  
