@@ -1369,8 +1369,8 @@ body{
   max-width: 720px;
   margin: 0 auto;
   padding: 24px 20px 40px;
+  background: #fff;
 }
-
 .vd-intro{
   font-size: 16px;
   line-height: 1.7;
