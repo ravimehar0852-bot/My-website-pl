@@ -473,3 +473,85 @@ function renderTestimonials(){
 
 document.addEventListener("DOMContentLoaded", renderTestimonials);
                           
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.getElementById('blogTrack');
+  const dotsWrap = document.getElementById('blogDots');
+  if (!track || !dotsWrap) return;
+  const allCards = track.children;
+  const realCount = allCards.length - 2;
+  let index = 1;
+  let autoSlide;
+  let isTransitioning = false;
+
+  for (let i = 0; i < realCount; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('blog-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      goToSlide(i + 1);
+      resetAutoSlide();
+    });
+    dotsWrap.appendChild(dot);
+  }
+  const dots = dotsWrap.children;
+
+  function updateDots(realIndex) {
+    [...dots].forEach(d => d.classList.remove('active'));
+    dots[realIndex].classList.add('active');
+  }
+
+  function getCardWidth() {
+    return allCards[0].getBoundingClientRect().width + 15;
+  }
+
+  function goToSlide(i, animate = true) {
+    isTransitioning = animate;
+    track.style.transition = animate ? 'transform 0.5s ease' : 'none';
+    track.style.transform = `translateX(-${i * getCardWidth()}px)`;
+    index = i;
+
+    let realIndex = index - 1;
+    if (realIndex < 0) realIndex = realCount - 1;
+    if (realIndex >= realCount) realIndex = 0;
+    updateDots(realIndex);
+  }
+
+  function nextSlide() {
+    if (isTransitioning) return;
+    goToSlide(index + 1);
+  }
+
+  track.addEventListener('transitionend', () => {
+    isTransitioning = false;
+    if (index === allCards.length - 1) {
+      goToSlide(1, false);
+    } else if (index === 0) {
+      goToSlide(realCount, false);
+    }
+  });
+
+  function startAutoSlide() {
+    autoSlide = setInterval(nextSlide, 3000);
+  }
+  function resetAutoSlide() {
+    clearInterval(autoSlide);
+    startAutoSlide();
+  }
+
+  let startX = 0;
+  track.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    clearInterval(autoSlide);
+  });
+  track.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (diff > 50) goToSlide(index + 1);
+    if (diff < -50) goToSlide(index - 1);
+    resetAutoSlide();
+  });
+
+  window.addEventListener('resize', () => goToSlide(index, false));
+
+  goToSlide(1, false);
+  startAutoSlide();
+});
