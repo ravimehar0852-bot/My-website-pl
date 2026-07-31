@@ -1,31 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Tab switching: Outstation / Local
-  const tabs = document.querySelectorAll('.tab');
-  const outstationForm = document.getElementById('outstationForm');
-  const localForm = document.getElementById('localForm');
-
-  tabs.forEach((tab, idx) => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-
-      if (!outstationForm || !localForm) {
-        console.error('outstationForm ya localForm div HTML mein nahi mila. IDs check karein.');
-        return;
-      }
-
-      if (idx === 0) {
-        outstationForm.style.display = 'block';
-        localForm.style.display = 'none';
-      } else {
-        outstationForm.style.display = 'none';
-        localForm.style.display = 'block';
-      }
-    });
-  });
-
-  // Toggle switching (har .toggle-row ke andar alag-alag group)
+// Toggle switching (har .toggle-row ke andar alag-alag group)
   document.querySelectorAll('.toggle-row').forEach(row => {
     const btns = row.querySelectorAll('.toggle-btn');
     btns.forEach(btn => {
@@ -39,6 +14,29 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+  // Side menu toggle
+  const menuBtn = document.querySelector('.menu-icon');
+  const sideMenu = document.getElementById('sideMenu');
+  const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+  const sideMenuClose = document.getElementById('sideMenuClose');
+
+  if (menuBtn && sideMenu && sideMenuOverlay) {
+    menuBtn.addEventListener('click', () => {
+      sideMenu.classList.add('active');
+      sideMenuOverlay.classList.add('active');
+    });
+
+    const closeMenu = () => {
+      sideMenu.classList.remove('active');
+      sideMenuOverlay.classList.remove('active');
+    };
+
+    if (sideMenuClose) sideMenuClose.addEventListener('click', closeMenu);
+    sideMenuOverlay.addEventListener('click', closeMenu);
+  }
+
+// Set today's date & current time as default (Outstation)
 // Set today's date & current time as default (Outstation)
   const dateField = document.getElementById('dateInput');
   const timeField = document.getElementById('timeInput');
