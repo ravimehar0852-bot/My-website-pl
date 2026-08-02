@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     alert('Coupon check abhi implement nahi hui hai.');
   });
 
- document.getElementById('payNowBtn').addEventListener('click', () => {
+  document.getElementById('payNowBtn').addEventListener('click', () => {
     const name = document.getElementById('guestName').value.trim();
     const email = document.getElementById('guestEmail').value.trim();
     const guestMobile = document.getElementById('guestMobile').value.trim();
@@ -62,7 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Payment gateway abhi integrate nahi hui — ye agla step hoga.');
     }
   });
-// GST checkbox toggle
+
+  // GST checkbox toggle
   const guestGST = document.getElementById('guestGST');
   const gstFields = document.getElementById('gstFields');
   if (guestGST && gstFields) {
@@ -79,20 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
       flightFields.style.display = guestFlight.checked ? 'block' : 'none';
     });
   }
-const paymentTypeSelect = document.getElementById('paymentTypeSelect');
-  if (paymentTypeSelect) {
-    paymentTypeSelect.addEventListener('change', () => {
-      const type = paymentTypeSelect.value;
-      if (type === 'advance') {
-        document.getElementById('advanceAmount').textContent = `₹ ${advanceAmount}.00`;
-      } else if (type === 'full') {
-        document.getElementById('advanceAmount').textContent = `₹ ${cabPrice}`;
-      } else if (type === 'driver') {
-        document.getElementById('advanceAmount').textContent = `₹ 0`;
-      }
-    });
-  }
-const paymentTypeSelect = document.getElementById('paymentTypeSelect');
+
+  // Payment type dropdown -> update advance amount shown
+  const paymentTypeSelect = document.getElementById('paymentTypeSelect');
   if (paymentTypeSelect) {
     paymentTypeSelect.addEventListener('change', () => {
       const type = paymentTypeSelect.value;
