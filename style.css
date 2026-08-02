@@ -1576,3 +1576,88 @@ body{
     flex: 0 0 calc(33.333% - 15px);
   }
 }
+
+/* ============ SELECT CAB POPUP ============ */
+.select-cab-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.select-cab-modal{
+  background: #000;
+  border-radius: 16px;
+  padding: 30px 24px;
+  max-width: 420px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.modal-close-btn{
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f4b400;
+  border: none;
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-welcome-box{
+  border: 2px solid #f4b400;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 24px;
+}
+
+.modal-welcome-box p{
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.modal-claim-text{
+  color: #fff;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.modal-mobile-input{
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #f4b400;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 15px;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.modal-submit-btn{
+  width: 100%;
+  background: #f4b400;
+  border: none;
+  border-radius: 30px;
+  padding: 16px 0;
+  font-weight: 800;
+  font-size: 16px;
+  color: #000;
+  cursor: pointer;
+    }
+
