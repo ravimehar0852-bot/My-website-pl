@@ -92,3 +92,18 @@ const paymentTypeSelect = document.getElementById('paymentTypeSelect');
       }
     });
   }
+const paymentTypeSelect = document.getElementById('paymentTypeSelect');
+  if (paymentTypeSelect) {
+    paymentTypeSelect.addEventListener('change', () => {
+      const type = paymentTypeSelect.value;
+      if (type === 'advance') {
+        document.getElementById('advanceAmount').textContent = `₹ ${advanceAmount}.00`;
+      } else if (type === 'full') {
+        document.getElementById('advanceAmount').textContent = `₹ ${cabPrice}`;
+      } else if (type === 'driver') {
+        document.getElementById('advanceAmount').textContent = `₹ 0`;
+      }
+    });
+  }
+
+});
