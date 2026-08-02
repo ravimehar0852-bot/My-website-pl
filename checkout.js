@@ -43,17 +43,25 @@ document.addEventListener('DOMContentLoaded', () => {
     alert('Coupon check abhi implement nahi hui hai.');
   });
 
-  document.getElementById('payNowBtn').addEventListener('click', () => {
+ document.getElementById('payNowBtn').addEventListener('click', () => {
     const name = document.getElementById('guestName').value.trim();
     const email = document.getElementById('guestEmail').value.trim();
     const guestMobile = document.getElementById('guestMobile').value.trim();
+    const paymentType = document.getElementById('paymentTypeSelect').value;
 
     if (!name) { alert('Please enter guest name.'); return; }
     if (!guestMobile || !/^\d{10}$/.test(guestMobile)) { alert('Please enter a valid mobile number.'); return; }
 
-    alert('Payment gateway abhi integrate nahi hui — ye agla step hoga.');
+    if (paymentType === 'driver') {
+      // Pay to Driver -> no online payment, seedha booking confirm karo
+      const text = `Booking Confirmed!\nName: ${name}\nMobile: ${guestMobile}\nCab: ${cabSubtitle}\nFare: ₹${cabPrice}\nPayment: Pay to Driver (Cash/UPI on arrival)\nRoute: ${from} -> ${to}\nDate & Time: ${dateTime}`;
+      window.open(`https://wa.me/918737993690?text=${encodeURIComponent(text)}`, '_blank');
+      alert('Aapki booking confirm ho gayi hai! Payment driver ko trip ke time karna hoga.');
+    } else {
+      // Advance / Full Payment -> online payment gateway (baad mein integrate karenge)
+      alert('Payment gateway abhi integrate nahi hui — ye agla step hoga.');
+    }
   });
-});
 // GST checkbox toggle
   const guestGST = document.getElementById('guestGST');
   const gstFields = document.getElementById('gstFields');
