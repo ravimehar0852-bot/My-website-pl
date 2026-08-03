@@ -1677,46 +1677,17 @@ body{
 }
 
 .blogpost-banner{
-  position: relative;
-  display: flex;
-  gap: 8px;
-  align-items: flex-end;
-  background: linear-gradient(180deg, #fff 60%, #f4b400 60%);
-  padding: 16px 12px 0;
+.blogpost-banner{
   border-radius: 12px;
   margin-bottom: 30px;
   overflow: hidden;
 }
 
-.blogpost-banner-img{
-  width: 30%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-.blogpost-banner-img-center{
-  width: 40%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  margin-bottom: -10px;
-  z-index: 2;
-}
-
-.blogpost-banner-caption{
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.blogpost-banner-single-img{
   width: 100%;
-  background: #f4b400;
-  color: #000;
-  font-weight: 800;
-  font-size: 16px;
-  text-align: center;
-  padding: 12px 0;
+  height: auto;
+  display: block;
+  border-radius: 12px;
 }
 
 .blogpost-heading{
